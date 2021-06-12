@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="CompilerConfiguration">
+    <annotationProcessing>
+      <profile default="true" name="Default" enabled="true" />
+      <profile name="Maven default annotation processors profile" enabled="true">
+        <sourceOutputDir name="target/generated-sources/annotations" />
+        <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
+        <outputRelativeToContentRoot value="true" />
+        <module name="smiler-member-search-dao" />
+        <module name="smiler-member-search-common" />
+        <module name="smiler-member-search-index" />
+        <module name="smiler-member-search-index-service" />
+        <module name="smiler-member-search-client" />
+        <module name="smiler-member-search-api-impl" />
+        <module name="smiler-member-search-core" />
+        <module name="smiler-member-search-query" />
+        <module name="smiler-member-search-mode" />
+        <module name="smiler-member-search-api" />
+        <module name="smiler-member-search-query-service" />
+      </profile>
+    </annotationProcessing>
+    <bytecodeTargetLevel>
+      <module name="smiler-member-search-facade" target="8" />
+      <module name="smiler-member-web" target="8" />
+    </bytecodeTargetLevel>
+  </component>
+  <component name="JavacSettings">
+    <option name="ADDITIONAL_OPTIONS_OVERRIDE">
+      <module name="smiler-member-search" options="-parameters" />
+      <module name="smiler-member-search-api" options="-parameters" />
+      <module name="smiler-member-search-api-impl" options="-parameters" />
+      <module name="smiler-member-search-client" options="-parameters" />
+      <module name="smiler-member-search-common" options="-parameters" />
+      <module name="smiler-member-search-core" options="-parameters" />
+      <module name="smiler-member-search-dao" options="-parameters" />
+      <module name="smiler-member-search-facade" options="-parameters" />
+      <module name="smiler-member-search-index" options="-parameters" />
+      <module name="smiler-member-search-index-service" options="-parameters" />
+      <module name="smiler-member-search-mode" options="-parameters" />
+      <module name="smiler-member-search-query" options="-parameters" />
+      <module name="smiler-member-search-query-service" options="-parameters" />
+      <module name="smiler-member-web" options="-parameters" />
+    </option>
+  </component>
+</project>

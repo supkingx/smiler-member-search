@@ -1,0 +1,66 @@
+{
+  "query": {
+    "bool": {
+      "must": [
+        <% if(username != null && username != ''){ %>
+        {
+          "multi_match": {
+            "query": "${username}",
+            "fields": [
+              "username",
+              "username.fuzzy",
+              "username.pinyin"
+            ]
+          }
+        },
+        <% } %>
+        <% if(address != null && address != ''){ %>
+        {
+          "multi_match": {
+            "query": "${address}",
+            "fields": [
+              "address"
+            ]
+          }
+        },
+        <% } %>
+        <% if(gender != null && gender != ''){ %>
+        {
+          "term": {
+            "gender": {
+              "value": "${gender}"
+            }
+          }
+        },
+        <% } %>
+        <% if(birthdayStart != null && birthdayStart != '' || birthdayEnd != null && birthdayEnd != ''){ %>
+        {
+          "range": {
+            "birthday": {
+             <% if(birthdayStart != null && birthdayStart != ''){ %>
+              "gte": "${birthdayStart}"
+             <% } %>
+             <% if(birthdayStart != null && birthdayStart != '' && birthdayEnd != null && birthdayEnd != ''){ %>
+             ,
+             <% } %>
+             <% if(birthdayEnd != null && birthdayEnd != ''){ %>
+              "lte": "${birthdayEnd}"
+             <% } %>
+            }
+          }
+        },
+        <% } %>
+       {
+         "match_all": {}
+       }
+      ]
+    }
+  },
+  "sort": [
+    {
+      "id": {
+        "order": "desc"
+      }
+    }
+  ]
+}
