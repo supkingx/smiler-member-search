@@ -5,7 +5,6 @@ import com.google.common.collect.Lists;
 import com.smiler.member.constant.CommonConstant;
 import com.smiler.member.constant.RabbitMqConstant;
 import com.smiler.member.core.orika.OrikaFacade;
-import com.smiler.member.model.enums.MessageTypeEnum;
 import com.smiler.member.model.po.UserPo;
 import com.smiler.member.model.po.UserSearchPo;
 import com.smiler.member.model.vo.UserIndexMessageVo;
@@ -32,7 +31,13 @@ public class RabbitMqListener {
     private static final Logger LOGGER = LoggerFactory.getLogger(RabbitMqListener.class);
 
     @Autowired
+    private UserBaseService userBaseService;
+
+    @Autowired
     private UserIndexService userIndexService;
+
+    @Autowired
+    private OrikaFacade orikaFacade;
 
     @RabbitListener(queues = RabbitMqConstant.SMILER_USER_INDEX)
     public void receiveUserIndexMessage(String massageContent) {
@@ -41,8 +46,10 @@ public class RabbitMqListener {
             return;
         }
         UserIndexMessageVo userIndexMessageVo = JSON.parseObject(massageContent, UserIndexMessageVo.class);
-        if (MessageTypeEnum.USER_ADD.getType().equals(userIndexMessageVo.getType())) {
-            userIndexService.addUserByIds(userIndexMessageVo.getIds());
+        for (List<BigInteger> ids : Lists.partition(userIndexMessageVo.getIds(), CommonConstant.QUERY_SIZE)) {
+            List<UserPo> userPos = userBaseService.queryUserByIds(ids);
+            List<UserSearchPo> userSearchPos = orikaFacade.mapAsList(userPos, UserSearchPo.class);
+            userIndexService.indexUserForClient(userSearchPos);
         }
     }
 }

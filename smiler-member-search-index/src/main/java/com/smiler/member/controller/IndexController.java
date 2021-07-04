@@ -1,6 +1,5 @@
 package com.smiler.member.controller;
 
-import com.smiler.member.dao2.user.UserMapper;
 import com.smiler.member.model.po.UserPo;
 import com.smiler.member.model.po.UserSearchPo;
 import com.smiler.member.model.vo.UserVo;
@@ -30,8 +29,6 @@ public class IndexController {
     private UserIndexService userIndexService;
     @Autowired
     private UserBaseService userBaseService;
-    @Autowired
-    private UserMapper userMapper;
 
     @GetMapping("/indexUsersTest")
     public int indexUsersTest() {
@@ -63,8 +60,4 @@ public class IndexController {
         return userBaseService.queryUserByIds(ids);
     }
 
-    @GetMapping("/list")
-    public List<UserPo> list() {
-        return userMapper.queryAllUsers();
-    }
 }
