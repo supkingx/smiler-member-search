@@ -1,0 +1,969 @@
+2021-06-27 22:45:02,963 [INFO] [main] c.s.m.MemberIndexApplication:? Starting MemberIndexApplication on wangchaodeMacBook-Pro.local with PID 40138 (/Users/superking/Documents/project/ComprehensiveDemo/smiler-member-search/smiler-member-search-index/target/classes started by superking in /Users/superking/Documents/project/ComprehensiveDemo/smiler-member-search)
+2021-06-27 22:45:02,966 [INFO] [main] c.s.m.MemberIndexApplication:? The following profiles are active: dev
+2021-06-27 22:45:03,668 [INFO] [main] o.s.c.a.ConfigurationClassPostProcessor:? Cannot enhance @Configuration bean definition 'mybatisConfig' since its singleton instance has been created too early. The typical cause is a non-static @Bean method with a BeanDefinitionRegistryPostProcessor return type: Consider declaring such methods as 'static'.
+2021-06-27 22:45:04,006 [INFO] [main] o.s.b.w.e.t.TomcatWebServer:? Tomcat initialized with port(s): 8082 (http)
+2021-06-27 22:45:04,013 [INFO] [main] o.a.c.c.StandardService:? Starting service [Tomcat]
+2021-06-27 22:45:04,013 [INFO] [main] o.a.c.c.StandardEngine:? Starting Servlet engine: [Apache Tomcat/9.0.37]
+2021-06-27 22:45:04,076 [INFO] [main] o.a.c.c.C.[.[.[/]:? Initializing Spring embedded WebApplicationContext
+2021-06-27 22:45:04,076 [INFO] [main] o.s.b.w.s.c.ServletWebServerApplicationContext:? Root WebApplicationContext: initialization completed in 1069 ms
+2021-06-27 22:45:05,091 [INFO] [main] o.s.s.c.ThreadPoolTaskExecutor:? Initializing ExecutorService 'applicationTaskExecutor'
+2021-06-27 22:45:05,503 [INFO] [main] o.a.k.c.c.ConsumerConfig:? ConsumerConfig values: 
+	allow.auto.create.topics = true
+	auto.commit.interval.ms = 5000
+	auto.offset.reset = latest
+	bootstrap.servers = [localhost:9092]
+	check.crcs = true
+	client.dns.lookup = default
+	client.id = 
+	client.rack = 
+	connections.max.idle.ms = 540000
+	default.api.timeout.ms = 60000
+	enable.auto.commit = false
+	exclude.internal.topics = true
+	fetch.max.bytes = 52428800
+	fetch.max.wait.ms = 500
+	fetch.min.bytes = 1
+	group.id = smiler.user
+	group.instance.id = null
+	heartbeat.interval.ms = 3000
+	interceptor.classes = []
+	internal.leave.group.on.close = true
+	isolation.level = read_uncommitted
+	key.deserializer = class org.apache.kafka.common.serialization.StringDeserializer
+	max.partition.fetch.bytes = 1048576
+	max.poll.interval.ms = 300000
+	max.poll.records = 500
+	metadata.max.age.ms = 300000
+	metric.reporters = []
+	metrics.num.samples = 2
+	metrics.recording.level = INFO
+	metrics.sample.window.ms = 30000
+	partition.assignment.strategy = [class org.apache.kafka.clients.consumer.RangeAssignor]
+	receive.buffer.bytes = 65536
+	reconnect.backoff.max.ms = 1000
+	reconnect.backoff.ms = 50
+	request.timeout.ms = 30000
+	retry.backoff.ms = 100
+	sasl.client.callback.handler.class = null
+	sasl.jaas.config = null
+	sasl.kerberos.kinit.cmd = /usr/bin/kinit
+	sasl.kerberos.min.time.before.relogin = 60000
+	sasl.kerberos.service.name = null
+	sasl.kerberos.ticket.renew.jitter = 0.05
+	sasl.kerberos.ticket.renew.window.factor = 0.8
+	sasl.login.callback.handler.class = null
+	sasl.login.class = null
+	sasl.login.refresh.buffer.seconds = 300
+	sasl.login.refresh.min.period.seconds = 60
+	sasl.login.refresh.window.factor = 0.8
+	sasl.login.refresh.window.jitter = 0.05
+	sasl.mechanism = GSSAPI
+	security.protocol = PLAINTEXT
+	security.providers = null
+	send.buffer.bytes = 131072
+	session.timeout.ms = 10000
+	ssl.cipher.suites = null
+	ssl.enabled.protocols = [TLSv1.2]
+	ssl.endpoint.identification.algorithm = https
+	ssl.key.password = null
+	ssl.keymanager.algorithm = SunX509
+	ssl.keystore.location = null
+	ssl.keystore.password = null
+	ssl.keystore.type = JKS
+	ssl.protocol = TLSv1.2
+	ssl.provider = null
+	ssl.secure.random.implementation = null
+	ssl.trustmanager.algorithm = PKIX
+	ssl.truststore.location = null
+	ssl.truststore.password = null
+	ssl.truststore.type = JKS
+	value.deserializer = class org.apache.kafka.common.serialization.StringDeserializer
+
+2021-06-27 22:45:05,564 [INFO] [main] o.a.k.c.u.AppInfoParser:? Kafka version: 2.5.0
+2021-06-27 22:45:05,565 [INFO] [main] o.a.k.c.u.AppInfoParser:? Kafka commitId: 66563e712b0b9f84
+2021-06-27 22:45:05,565 [INFO] [main] o.a.k.c.u.AppInfoParser:? Kafka startTimeMs: 1624805105562
+2021-06-27 22:45:05,569 [INFO] [main] o.a.k.c.c.KafkaConsumer:? [Consumer clientId=consumer-smiler.user-1, groupId=smiler.user] Subscribed to topic(s): smiler.user.index
+2021-06-27 22:45:05,571 [INFO] [main] o.s.s.c.ThreadPoolTaskScheduler:? Initializing ExecutorService
+2021-06-27 22:45:05,606 [INFO] [main] o.s.b.w.e.t.TomcatWebServer:? Tomcat started on port(s): 8082 (http) with context path ''
+2021-06-27 22:45:05,607 [INFO] [main] o.s.a.r.c.CachingConnectionFactory:? Attempting to connect to: [127.0.0.1:5672]
+2021-06-27 22:45:05,826 [INFO] [1-0-C-1] o.a.k.c.Metadata:? [Consumer clientId=consumer-smiler.user-1, groupId=smiler.user] Cluster ID: eeYi3R63RGOOIOh0mqrcEQ
+2021-06-27 22:45:05,828 [INFO] [1-0-C-1] o.a.k.c.c.i.AbstractCoordinator:? [Consumer clientId=consumer-smiler.user-1, groupId=smiler.user] Discovered group coordinator localhost:9092 (id: 2147483647 rack: null)
+2021-06-27 22:45:05,830 [INFO] [1-0-C-1] o.a.k.c.c.i.AbstractCoordinator:? [Consumer clientId=consumer-smiler.user-1, groupId=smiler.user] (Re-)joining group
+2021-06-27 22:45:05,839 [INFO] [1-0-C-1] o.a.k.c.c.i.AbstractCoordinator:? [Consumer clientId=consumer-smiler.user-1, groupId=smiler.user] Join group failed with org.apache.kafka.common.errors.MemberIdRequiredException: The group member needs to have a valid member id before actually entering a consumer group
+2021-06-27 22:45:05,839 [INFO] [1-0-C-1] o.a.k.c.c.i.AbstractCoordinator:? [Consumer clientId=consumer-smiler.user-1, groupId=smiler.user] (Re-)joining group
+2021-06-27 22:45:06,613 [INFO] [main] o.s.a.r.l.SimpleMessageListenerContainer:? Broker not available; cannot force queue declarations during start: java.net.ConnectException: Connection refused (Connection refused)
+2021-06-27 22:45:06,619 [INFO] [org.springframework.amqp.rabbit.RabbitListenerEndpointContainer#0-1] o.s.a.r.c.CachingConnectionFactory:? Attempting to connect to: [127.0.0.1:5672]
+2021-06-27 22:45:07,392 [INFO] [1-0-C-1] o.a.k.c.c.i.AbstractCoordinator:? [Consumer clientId=consumer-smiler.user-1, groupId=smiler.user] Successfully joined group with generation 7
+2021-06-27 22:45:07,397 [INFO] [1-0-C-1] o.a.k.c.c.i.ConsumerCoordinator:? [Consumer clientId=consumer-smiler.user-1, groupId=smiler.user] Adding newly assigned partitions: smiler.user.index-0
+2021-06-27 22:45:07,407 [INFO] [1-0-C-1] o.a.k.c.c.i.ConsumerCoordinator:? [Consumer clientId=consumer-smiler.user-1, groupId=smiler.user] Setting offset for partition smiler.user.index-0 to the committed offset FetchPosition{offset=1, offsetEpoch=Optional.empty, currentLeader=LeaderAndEpoch{leader=Optional[localhost:9092 (id: 0 rack: null)], epoch=0}}
+2021-06-27 22:45:07,408 [INFO] [1-0-C-1] o.s.k.l.KafkaMessageListenerContainer:? smiler.user: partitions assigned: [smiler.user.index-0]
+2021-06-27 22:45:07,631 [INFO] [main] c.s.m.MemberIndexApplication:? Started MemberIndexApplication in 5.576 seconds (JVM running for 6.408)
+2021-06-27 22:45:12,717 [INFO] [org.springframework.amqp.rabbit.RabbitListenerEndpointContainer#0-1] o.s.a.r.l.SimpleMessageListenerContainer:? Restarting Consumer@5dfe23e8: tags=[[]], channel=null, acknowledgeMode=AUTO local queue size=0
+2021-06-27 22:45:12,719 [INFO] [org.springframework.amqp.rabbit.RabbitListenerEndpointContainer#0-2] o.s.a.r.c.CachingConnectionFactory:? Attempting to connect to: [127.0.0.1:5672]
+2021-06-27 22:45:18,824 [INFO] [org.springframework.amqp.rabbit.RabbitListenerEndpointContainer#0-2] o.s.a.r.l.SimpleMessageListenerContainer:? Restarting Consumer@1a14593a: tags=[[]], channel=null, acknowledgeMode=AUTO local queue size=0
+2021-06-27 22:45:18,825 [INFO] [org.springframework.amqp.rabbit.RabbitListenerEndpointContainer#0-3] o.s.a.r.c.CachingConnectionFactory:? Attempting to connect to: [127.0.0.1:5672]
+2021-06-27 22:45:24,914 [INFO] [org.springframework.amqp.rabbit.RabbitListenerEndpointContainer#0-3] o.s.a.r.l.SimpleMessageListenerContainer:? Restarting Consumer@e63e2f1: tags=[[]], channel=null, acknowledgeMode=AUTO local queue size=0
+2021-06-27 22:45:24,915 [INFO] [org.springframework.amqp.rabbit.RabbitListenerEndpointContainer#0-4] o.s.a.r.c.CachingConnectionFactory:? Attempting to connect to: [127.0.0.1:5672]
+2021-06-27 22:45:25,418 [INFO] [1-0-C-1] o.a.k.c.c.i.AbstractCoordinator:? [Consumer clientId=consumer-smiler.user-1, groupId=smiler.user] Attempt to heartbeat failed since group is rebalancing
+2021-06-27 22:45:25,418 [INFO] [1-0-C-1] o.a.k.c.c.i.ConsumerCoordinator:? [Consumer clientId=consumer-smiler.user-1, groupId=smiler.user] Revoke previously assigned partitions smiler.user.index-0
+2021-06-27 22:45:25,419 [INFO] [1-0-C-1] o.s.k.l.KafkaMessageListenerContainer:? smiler.user: partitions revoked: [smiler.user.index-0]
+2021-06-27 22:45:25,419 [INFO] [1-0-C-1] o.a.k.c.c.i.AbstractCoordinator:? [Consumer clientId=consumer-smiler.user-1, groupId=smiler.user] (Re-)joining group
+2021-06-27 22:45:25,423 [INFO] [1-0-C-1] o.a.k.c.c.i.ConsumerCoordinator:? [Consumer clientId=consumer-smiler.user-1, groupId=smiler.user] Finished assignment for group at generation 8: {consumer-smiler.user-1-00e0a9be-d93f-45b7-ab5a-a08667ddc8f7=Assignment(partitions=[smiler.user.index-0])}
+2021-06-27 22:45:25,426 [INFO] [1-0-C-1] o.a.k.c.c.i.AbstractCoordinator:? [Consumer clientId=consumer-smiler.user-1, groupId=smiler.user] Successfully joined group with generation 8
+2021-06-27 22:45:25,427 [INFO] [1-0-C-1] o.a.k.c.c.i.ConsumerCoordinator:? [Consumer clientId=consumer-smiler.user-1, groupId=smiler.user] Adding newly assigned partitions: smiler.user.index-0
+2021-06-27 22:45:25,429 [INFO] [1-0-C-1] o.a.k.c.c.i.ConsumerCoordinator:? [Consumer clientId=consumer-smiler.user-1, groupId=smiler.user] Setting offset for partition smiler.user.index-0 to the committed offset FetchPosition{offset=1, offsetEpoch=Optional.empty, currentLeader=LeaderAndEpoch{leader=Optional[localhost:9092 (id: 0 rack: null)], epoch=0}}
+2021-06-27 22:45:25,429 [INFO] [1-0-C-1] o.s.k.l.KafkaMessageListenerContainer:? smiler.user: partitions assigned: [smiler.user.index-0]
+2021-06-27 22:45:31,005 [INFO] [org.springframework.amqp.rabbit.RabbitListenerEndpointContainer#0-4] o.s.a.r.l.SimpleMessageListenerContainer:? Restarting Consumer@7a7d0574: tags=[[]], channel=null, acknowledgeMode=AUTO local queue size=0
+2021-06-27 22:45:31,006 [INFO] [org.springframework.amqp.rabbit.RabbitListenerEndpointContainer#0-5] o.s.a.r.c.CachingConnectionFactory:? Attempting to connect to: [127.0.0.1:5672]
+2021-06-27 22:45:37,105 [INFO] [org.springframework.amqp.rabbit.RabbitListenerEndpointContainer#0-5] o.s.a.r.l.SimpleMessageListenerContainer:? Restarting Consumer@30cda591: tags=[[]], channel=null, acknowledgeMode=AUTO local queue size=0
+2021-06-27 22:45:37,106 [INFO] [org.springframework.amqp.rabbit.RabbitListenerEndpointContainer#0-6] o.s.a.r.c.CachingConnectionFactory:? Attempting to connect to: [127.0.0.1:5672]
+2021-06-27 22:45:43,193 [INFO] [org.springframework.amqp.rabbit.RabbitListenerEndpointContainer#0-6] o.s.a.r.l.SimpleMessageListenerContainer:? Restarting Consumer@370e33a8: tags=[[]], channel=null, acknowledgeMode=AUTO local queue size=0
+2021-06-27 22:45:43,194 [INFO] [org.springframework.amqp.rabbit.RabbitListenerEndpointContainer#0-7] o.s.a.r.c.CachingConnectionFactory:? Attempting to connect to: [127.0.0.1:5672]
+2021-06-27 22:45:49,282 [INFO] [org.springframework.amqp.rabbit.RabbitListenerEndpointContainer#0-7] o.s.a.r.l.SimpleMessageListenerContainer:? Restarting Consumer@507d8147: tags=[[]], channel=null, acknowledgeMode=AUTO local queue size=0
+2021-06-27 22:45:49,282 [INFO] [org.springframework.amqp.rabbit.RabbitListenerEndpointContainer#0-8] o.s.a.r.c.CachingConnectionFactory:? Attempting to connect to: [127.0.0.1:5672]
+2021-06-27 22:45:55,385 [INFO] [org.springframework.amqp.rabbit.RabbitListenerEndpointContainer#0-8] o.s.a.r.l.SimpleMessageListenerContainer:? Restarting Consumer@3e707dde: tags=[[]], channel=null, acknowledgeMode=AUTO local queue size=0
+2021-06-27 22:45:55,386 [INFO] [org.springframework.amqp.rabbit.RabbitListenerEndpointContainer#0-9] o.s.a.r.c.CachingConnectionFactory:? Attempting to connect to: [127.0.0.1:5672]
+2021-06-27 22:46:01,480 [INFO] [org.springframework.amqp.rabbit.RabbitListenerEndpointContainer#0-9] o.s.a.r.l.SimpleMessageListenerContainer:? Restarting Consumer@76703e3: tags=[[]], channel=null, acknowledgeMode=AUTO local queue size=0
+2021-06-27 22:46:01,481 [INFO] [org.springframework.amqp.rabbit.RabbitListenerEndpointContainer#0-10] o.s.a.r.c.CachingConnectionFactory:? Attempting to connect to: [127.0.0.1:5672]
+2021-06-27 22:46:07,580 [INFO] [org.springframework.amqp.rabbit.RabbitListenerEndpointContainer#0-10] o.s.a.r.l.SimpleMessageListenerContainer:? Restarting Consumer@6b103102: tags=[[]], channel=null, acknowledgeMode=AUTO local queue size=0
+2021-06-27 22:46:07,582 [INFO] [org.springframework.amqp.rabbit.RabbitListenerEndpointContainer#0-11] o.s.a.r.c.CachingConnectionFactory:? Attempting to connect to: [127.0.0.1:5672]
+2021-06-27 22:46:13,683 [INFO] [org.springframework.amqp.rabbit.RabbitListenerEndpointContainer#0-11] o.s.a.r.l.SimpleMessageListenerContainer:? Restarting Consumer@7ad1ad4f: tags=[[]], channel=null, acknowledgeMode=AUTO local queue size=0
+2021-06-27 22:46:13,684 [INFO] [org.springframework.amqp.rabbit.RabbitListenerEndpointContainer#0-12] o.s.a.r.c.CachingConnectionFactory:? Attempting to connect to: [127.0.0.1:5672]
+2021-06-27 22:46:19,790 [INFO] [org.springframework.amqp.rabbit.RabbitListenerEndpointContainer#0-12] o.s.a.r.l.SimpleMessageListenerContainer:? Restarting Consumer@7e8214f4: tags=[[]], channel=null, acknowledgeMode=AUTO local queue size=0
+2021-06-27 22:46:19,791 [INFO] [org.springframework.amqp.rabbit.RabbitListenerEndpointContainer#0-13] o.s.a.r.c.CachingConnectionFactory:? Attempting to connect to: [127.0.0.1:5672]
+2021-06-27 22:46:25,889 [INFO] [org.springframework.amqp.rabbit.RabbitListenerEndpointContainer#0-13] o.s.a.r.l.SimpleMessageListenerContainer:? Restarting Consumer@6e39b08d: tags=[[]], channel=null, acknowledgeMode=AUTO local queue size=0
+2021-06-27 22:46:25,890 [INFO] [org.springframework.amqp.rabbit.RabbitListenerEndpointContainer#0-14] o.s.a.r.c.CachingConnectionFactory:? Attempting to connect to: [127.0.0.1:5672]
+2021-06-27 22:46:31,980 [INFO] [org.springframework.amqp.rabbit.RabbitListenerEndpointContainer#0-14] o.s.a.r.l.SimpleMessageListenerContainer:? Restarting Consumer@76436ed0: tags=[[]], channel=null, acknowledgeMode=AUTO local queue size=0
+2021-06-27 22:46:31,981 [INFO] [org.springframework.amqp.rabbit.RabbitListenerEndpointContainer#0-15] o.s.a.r.c.CachingConnectionFactory:? Attempting to connect to: [127.0.0.1:5672]
+2021-06-27 22:46:38,073 [INFO] [org.springframework.amqp.rabbit.RabbitListenerEndpointContainer#0-15] o.s.a.r.l.SimpleMessageListenerContainer:? Restarting Consumer@55b09328: tags=[[]], channel=null, acknowledgeMode=AUTO local queue size=0
+2021-06-27 22:46:38,073 [INFO] [org.springframework.amqp.rabbit.RabbitListenerEndpointContainer#0-16] o.s.a.r.c.CachingConnectionFactory:? Attempting to connect to: [127.0.0.1:5672]
+2021-06-27 22:46:44,175 [INFO] [org.springframework.amqp.rabbit.RabbitListenerEndpointContainer#0-16] o.s.a.r.l.SimpleMessageListenerContainer:? Restarting Consumer@7e351118: tags=[[]], channel=null, acknowledgeMode=AUTO local queue size=0
+2021-06-27 22:46:44,175 [INFO] [org.springframework.amqp.rabbit.RabbitListenerEndpointContainer#0-17] o.s.a.r.c.CachingConnectionFactory:? Attempting to connect to: [127.0.0.1:5672]
+2021-06-27 22:46:50,261 [INFO] [org.springframework.amqp.rabbit.RabbitListenerEndpointContainer#0-17] o.s.a.r.l.SimpleMessageListenerContainer:? Restarting Consumer@288ebb59: tags=[[]], channel=null, acknowledgeMode=AUTO local queue size=0
+2021-06-27 22:46:50,262 [INFO] [org.springframework.amqp.rabbit.RabbitListenerEndpointContainer#0-18] o.s.a.r.c.CachingConnectionFactory:? Attempting to connect to: [127.0.0.1:5672]
+2021-06-27 22:46:56,349 [INFO] [org.springframework.amqp.rabbit.RabbitListenerEndpointContainer#0-18] o.s.a.r.l.SimpleMessageListenerContainer:? Restarting Consumer@d87d797: tags=[[]], channel=null, acknowledgeMode=AUTO local queue size=0
+2021-06-27 22:46:56,349 [INFO] [org.springframework.amqp.rabbit.RabbitListenerEndpointContainer#0-19] o.s.a.r.c.CachingConnectionFactory:? Attempting to connect to: [127.0.0.1:5672]
+2021-06-27 22:47:02,441 [INFO] [org.springframework.amqp.rabbit.RabbitListenerEndpointContainer#0-19] o.s.a.r.l.SimpleMessageListenerContainer:? Restarting Consumer@3cd5ec76: tags=[[]], channel=null, acknowledgeMode=AUTO local queue size=0
+2021-06-27 22:47:02,442 [INFO] [org.springframework.amqp.rabbit.RabbitListenerEndpointContainer#0-20] o.s.a.r.c.CachingConnectionFactory:? Attempting to connect to: [127.0.0.1:5672]
+2021-06-27 22:47:08,530 [INFO] [org.springframework.amqp.rabbit.RabbitListenerEndpointContainer#0-20] o.s.a.r.l.SimpleMessageListenerContainer:? Restarting Consumer@276ab78a: tags=[[]], channel=null, acknowledgeMode=AUTO local queue size=0
+2021-06-27 22:47:08,531 [INFO] [org.springframework.amqp.rabbit.RabbitListenerEndpointContainer#0-21] o.s.a.r.c.CachingConnectionFactory:? Attempting to connect to: [127.0.0.1:5672]
+2021-06-27 22:47:13,305 [INFO] [1-0-C-1] c.s.m.k.KafkaListenerService:? KafkaListenerService.receiveUserIndexMessage.msg:{"ids":[606658942654877696]}
+2021-06-27 22:47:13,424 [INFO] [1-0-C-1] c.a.d.p.DruidDataSource:? {dataSource-1} inited
+2021-06-27 22:47:13,800 [INFO] [1-0-C-1] o.a.k.c.c.KafkaConsumer:? [Consumer clientId=consumer-smiler.user-1, groupId=smiler.user] Seeking to offset 1 for partition smiler.user.index-0
+2021-06-27 22:47:13,807 [INFO] [1-0-C-1] c.s.m.k.KafkaListenerService:? KafkaListenerService.receiveUserIndexMessage.msg:{"ids":[606658942654877696]}
+2021-06-27 22:47:13,812 [INFO] [1-0-C-1] o.a.k.c.c.KafkaConsumer:? [Consumer clientId=consumer-smiler.user-1, groupId=smiler.user] Seeking to offset 1 for partition smiler.user.index-0
+2021-06-27 22:47:14,312 [INFO] [1-0-C-1] c.s.m.k.KafkaListenerService:? KafkaListenerService.receiveUserIndexMessage.msg:{"ids":[606658942654877696]}
+2021-06-27 22:47:14,317 [INFO] [1-0-C-1] o.a.k.c.c.KafkaConsumer:? [Consumer clientId=consumer-smiler.user-1, groupId=smiler.user] Seeking to offset 1 for partition smiler.user.index-0
+2021-06-27 22:47:14,626 [INFO] [org.springframework.amqp.rabbit.RabbitListenerEndpointContainer#0-21] o.s.a.r.l.SimpleMessageListenerContainer:? Restarting Consumer@3bee0b51: tags=[[]], channel=null, acknowledgeMode=AUTO local queue size=0
+2021-06-27 22:47:14,627 [INFO] [org.springframework.amqp.rabbit.RabbitListenerEndpointContainer#0-22] o.s.a.r.c.CachingConnectionFactory:? Attempting to connect to: [127.0.0.1:5672]
+2021-06-27 22:47:14,818 [INFO] [1-0-C-1] c.s.m.k.KafkaListenerService:? KafkaListenerService.receiveUserIndexMessage.msg:{"ids":[606658942654877696]}
+2021-06-27 22:47:14,824 [INFO] [1-0-C-1] o.a.k.c.c.KafkaConsumer:? [Consumer clientId=consumer-smiler.user-1, groupId=smiler.user] Seeking to offset 1 for partition smiler.user.index-0
+2021-06-27 22:47:15,321 [INFO] [1-0-C-1] c.s.m.k.KafkaListenerService:? KafkaListenerService.receiveUserIndexMessage.msg:{"ids":[606658942654877696]}
+2021-06-27 22:47:15,327 [INFO] [1-0-C-1] o.a.k.c.c.KafkaConsumer:? [Consumer clientId=consumer-smiler.user-1, groupId=smiler.user] Seeking to offset 1 for partition smiler.user.index-0
+2021-06-27 22:47:15,823 [INFO] [1-0-C-1] c.s.m.k.KafkaListenerService:? KafkaListenerService.receiveUserIndexMessage.msg:{"ids":[606658942654877696]}
+2021-06-27 22:47:15,828 [INFO] [1-0-C-1] o.a.k.c.c.KafkaConsumer:? [Consumer clientId=consumer-smiler.user-1, groupId=smiler.user] Seeking to offset 1 for partition smiler.user.index-0
+2021-06-27 22:47:16,326 [INFO] [1-0-C-1] c.s.m.k.KafkaListenerService:? KafkaListenerService.receiveUserIndexMessage.msg:{"ids":[606658942654877696]}
+2021-06-27 22:47:16,332 [INFO] [1-0-C-1] o.a.k.c.c.KafkaConsumer:? [Consumer clientId=consumer-smiler.user-1, groupId=smiler.user] Seeking to offset 1 for partition smiler.user.index-0
+2021-06-27 22:47:16,829 [INFO] [1-0-C-1] c.s.m.k.KafkaListenerService:? KafkaListenerService.receiveUserIndexMessage.msg:{"ids":[606658942654877696]}
+2021-06-27 22:47:16,835 [INFO] [1-0-C-1] o.a.k.c.c.KafkaConsumer:? [Consumer clientId=consumer-smiler.user-1, groupId=smiler.user] Seeking to offset 1 for partition smiler.user.index-0
+2021-06-27 22:47:17,332 [INFO] [1-0-C-1] c.s.m.k.KafkaListenerService:? KafkaListenerService.receiveUserIndexMessage.msg:{"ids":[606658942654877696]}
+2021-06-27 22:47:17,338 [INFO] [1-0-C-1] o.a.k.c.c.KafkaConsumer:? [Consumer clientId=consumer-smiler.user-1, groupId=smiler.user] Seeking to offset 1 for partition smiler.user.index-0
+2021-06-27 22:47:17,833 [INFO] [1-0-C-1] c.s.m.k.KafkaListenerService:? KafkaListenerService.receiveUserIndexMessage.msg:{"ids":[606658942654877696]}
+2021-06-27 22:47:20,817 [INFO] [org.springframework.amqp.rabbit.RabbitListenerEndpointContainer#0-22] o.s.a.r.l.SimpleMessageListenerContainer:? Restarting Consumer@2cc45eb8: tags=[[]], channel=null, acknowledgeMode=AUTO local queue size=0
+2021-06-27 22:47:20,818 [INFO] [org.springframework.amqp.rabbit.RabbitListenerEndpointContainer#0-23] o.s.a.r.c.CachingConnectionFactory:? Attempting to connect to: [127.0.0.1:5672]
+2021-06-27 22:47:26,913 [INFO] [org.springframework.amqp.rabbit.RabbitListenerEndpointContainer#0-23] o.s.a.r.l.SimpleMessageListenerContainer:? Restarting Consumer@73fd9893: tags=[[]], channel=null, acknowledgeMode=AUTO local queue size=0
+2021-06-27 22:47:26,914 [INFO] [org.springframework.amqp.rabbit.RabbitListenerEndpointContainer#0-24] o.s.a.r.c.CachingConnectionFactory:? Attempting to connect to: [127.0.0.1:5672]
+2021-06-27 22:47:33,001 [INFO] [org.springframework.amqp.rabbit.RabbitListenerEndpointContainer#0-24] o.s.a.r.l.SimpleMessageListenerContainer:? Restarting Consumer@37ee95d1: tags=[[]], channel=null, acknowledgeMode=AUTO local queue size=0
+2021-06-27 22:47:33,002 [INFO] [org.springframework.amqp.rabbit.RabbitListenerEndpointContainer#0-25] o.s.a.r.c.CachingConnectionFactory:? Attempting to connect to: [127.0.0.1:5672]
+2021-06-27 22:47:35,063 [INFO] [SpringContextShutdownHook] o.s.a.r.l.SimpleMessageListenerContainer:? Waiting for workers to finish.
+2021-06-27 22:47:35,063 [INFO] [SpringContextShutdownHook] o.s.a.r.l.SimpleMessageListenerContainer:? Successfully waited for workers to finish.
+2021-06-27 22:47:35,078 [INFO] [1-0-C-1] o.a.k.c.c.i.ConsumerCoordinator:? [Consumer clientId=consumer-smiler.user-1, groupId=smiler.user] Revoke previously assigned partitions smiler.user.index-0
+2021-06-27 22:47:35,078 [INFO] [1-0-C-1] o.s.k.l.KafkaMessageListenerContainer:? smiler.user: partitions revoked: [smiler.user.index-0]
+2021-06-27 22:47:35,078 [INFO] [1-0-C-1] o.a.k.c.c.i.AbstractCoordinator:? [Consumer clientId=consumer-smiler.user-1, groupId=smiler.user] Member consumer-smiler.user-1-00e0a9be-d93f-45b7-ab5a-a08667ddc8f7 sending LeaveGroup request to coordinator localhost:9092 (id: 2147483647 rack: null) due to the consumer unsubscribed from all topics
+2021-06-27 22:47:35,080 [INFO] [1-0-C-1] o.a.k.c.c.KafkaConsumer:? [Consumer clientId=consumer-smiler.user-1, groupId=smiler.user] Unsubscribed all topics or patterns and assigned partitions
+2021-06-27 22:47:35,080 [INFO] [1-0-C-1] o.s.s.c.ThreadPoolTaskScheduler:? Shutting down ExecutorService
+2021-06-27 22:47:35,087 [INFO] [1-0-C-1] o.s.k.l.KafkaMessageListenerContainer$ListenerConsumer:? smiler.user: Consumer stopped
+2021-06-27 22:47:35,092 [INFO] [SpringContextShutdownHook] o.s.a.r.l.SimpleMessageListenerContainer:? Shutdown ignored - container is not active already
+2021-06-27 22:47:35,093 [INFO] [SpringContextShutdownHook] o.s.s.c.ThreadPoolTaskExecutor:? Shutting down ExecutorService 'applicationTaskExecutor'
+2021-06-27 22:47:35,094 [INFO] [SpringContextShutdownHook] c.a.d.p.DruidDataSource:? {dataSource-1} closing ...
+2021-06-27 22:47:35,098 [INFO] [SpringContextShutdownHook] c.a.d.p.DruidDataSource:? {dataSource-1} closed
+2021-06-27 22:47:35,101 [INFO] [SpringContextShutdownHook] c.a.d.p.DruidDataSource:? {dataSource-1} closing ...
+2021-06-27 22:49:58,519 [INFO] [main] c.s.m.MemberIndexApplication:? Starting MemberIndexApplication on wangchaodeMacBook-Pro.local with PID 40324 (/Users/superking/Documents/project/ComprehensiveDemo/smiler-member-search/smiler-member-search-index/target/classes started by superking in /Users/superking/Documents/project/ComprehensiveDemo/smiler-member-search)
+2021-06-27 22:49:58,522 [INFO] [main] c.s.m.MemberIndexApplication:? The following profiles are active: dev
+2021-06-27 22:49:59,416 [INFO] [main] o.s.c.a.ConfigurationClassPostProcessor:? Cannot enhance @Configuration bean definition 'mybatisConfig' since its singleton instance has been created too early. The typical cause is a non-static @Bean method with a BeanDefinitionRegistryPostProcessor return type: Consider declaring such methods as 'static'.
+2021-06-27 22:49:59,826 [INFO] [main] o.s.b.w.e.t.TomcatWebServer:? Tomcat initialized with port(s): 8082 (http)
+2021-06-27 22:49:59,834 [INFO] [main] o.a.c.c.StandardService:? Starting service [Tomcat]
+2021-06-27 22:49:59,834 [INFO] [main] o.a.c.c.StandardEngine:? Starting Servlet engine: [Apache Tomcat/9.0.37]
+2021-06-27 22:49:59,909 [INFO] [main] o.a.c.c.C.[.[.[/]:? Initializing Spring embedded WebApplicationContext
+2021-06-27 22:49:59,909 [INFO] [main] o.s.b.w.s.c.ServletWebServerApplicationContext:? Root WebApplicationContext: initialization completed in 1324 ms
+2021-06-27 22:50:01,037 [INFO] [main] o.s.s.c.ThreadPoolTaskExecutor:? Initializing ExecutorService 'applicationTaskExecutor'
+2021-06-27 22:50:01,452 [INFO] [main] o.a.k.c.c.ConsumerConfig:? ConsumerConfig values: 
+	allow.auto.create.topics = true
+	auto.commit.interval.ms = 5000
+	auto.offset.reset = latest
+	bootstrap.servers = [localhost:9092]
+	check.crcs = true
+	client.dns.lookup = default
+	client.id = 
+	client.rack = 
+	connections.max.idle.ms = 540000
+	default.api.timeout.ms = 60000
+	enable.auto.commit = false
+	exclude.internal.topics = true
+	fetch.max.bytes = 52428800
+	fetch.max.wait.ms = 500
+	fetch.min.bytes = 1
+	group.id = smiler.user
+	group.instance.id = null
+	heartbeat.interval.ms = 3000
+	interceptor.classes = []
+	internal.leave.group.on.close = true
+	isolation.level = read_uncommitted
+	key.deserializer = class org.apache.kafka.common.serialization.StringDeserializer
+	max.partition.fetch.bytes = 1048576
+	max.poll.interval.ms = 300000
+	max.poll.records = 500
+	metadata.max.age.ms = 300000
+	metric.reporters = []
+	metrics.num.samples = 2
+	metrics.recording.level = INFO
+	metrics.sample.window.ms = 30000
+	partition.assignment.strategy = [class org.apache.kafka.clients.consumer.RangeAssignor]
+	receive.buffer.bytes = 65536
+	reconnect.backoff.max.ms = 1000
+	reconnect.backoff.ms = 50
+	request.timeout.ms = 30000
+	retry.backoff.ms = 100
+	sasl.client.callback.handler.class = null
+	sasl.jaas.config = null
+	sasl.kerberos.kinit.cmd = /usr/bin/kinit
+	sasl.kerberos.min.time.before.relogin = 60000
+	sasl.kerberos.service.name = null
+	sasl.kerberos.ticket.renew.jitter = 0.05
+	sasl.kerberos.ticket.renew.window.factor = 0.8
+	sasl.login.callback.handler.class = null
+	sasl.login.class = null
+	sasl.login.refresh.buffer.seconds = 300
+	sasl.login.refresh.min.period.seconds = 60
+	sasl.login.refresh.window.factor = 0.8
+	sasl.login.refresh.window.jitter = 0.05
+	sasl.mechanism = GSSAPI
+	security.protocol = PLAINTEXT
+	security.providers = null
+	send.buffer.bytes = 131072
+	session.timeout.ms = 10000
+	ssl.cipher.suites = null
+	ssl.enabled.protocols = [TLSv1.2]
+	ssl.endpoint.identification.algorithm = https
+	ssl.key.password = null
+	ssl.keymanager.algorithm = SunX509
+	ssl.keystore.location = null
+	ssl.keystore.password = null
+	ssl.keystore.type = JKS
+	ssl.protocol = TLSv1.2
+	ssl.provider = null
+	ssl.secure.random.implementation = null
+	ssl.trustmanager.algorithm = PKIX
+	ssl.truststore.location = null
+	ssl.truststore.password = null
+	ssl.truststore.type = JKS
+	value.deserializer = class org.apache.kafka.common.serialization.StringDeserializer
+
+2021-06-27 22:50:01,507 [INFO] [main] o.a.k.c.u.AppInfoParser:? Kafka version: 2.5.0
+2021-06-27 22:50:01,508 [INFO] [main] o.a.k.c.u.AppInfoParser:? Kafka commitId: 66563e712b0b9f84
+2021-06-27 22:50:01,508 [INFO] [main] o.a.k.c.u.AppInfoParser:? Kafka startTimeMs: 1624805401505
+2021-06-27 22:50:01,510 [INFO] [main] o.a.k.c.c.KafkaConsumer:? [Consumer clientId=consumer-smiler.user-1, groupId=smiler.user] Subscribed to topic(s): smiler.user.index
+2021-06-27 22:50:01,512 [INFO] [main] o.s.s.c.ThreadPoolTaskScheduler:? Initializing ExecutorService
+2021-06-27 22:50:01,544 [INFO] [main] o.s.b.w.e.t.TomcatWebServer:? Tomcat started on port(s): 8082 (http) with context path ''
+2021-06-27 22:50:01,546 [INFO] [main] o.s.a.r.c.CachingConnectionFactory:? Attempting to connect to: [127.0.0.1:5672]
+2021-06-27 22:50:01,776 [INFO] [1-0-C-1] o.a.k.c.Metadata:? [Consumer clientId=consumer-smiler.user-1, groupId=smiler.user] Cluster ID: eeYi3R63RGOOIOh0mqrcEQ
+2021-06-27 22:50:01,778 [INFO] [1-0-C-1] o.a.k.c.c.i.AbstractCoordinator:? [Consumer clientId=consumer-smiler.user-1, groupId=smiler.user] Discovered group coordinator localhost:9092 (id: 2147483647 rack: null)
+2021-06-27 22:50:01,780 [INFO] [1-0-C-1] o.a.k.c.c.i.AbstractCoordinator:? [Consumer clientId=consumer-smiler.user-1, groupId=smiler.user] (Re-)joining group
+2021-06-27 22:50:01,791 [INFO] [1-0-C-1] o.a.k.c.c.i.AbstractCoordinator:? [Consumer clientId=consumer-smiler.user-1, groupId=smiler.user] Join group failed with org.apache.kafka.common.errors.MemberIdRequiredException: The group member needs to have a valid member id before actually entering a consumer group
+2021-06-27 22:50:01,792 [INFO] [1-0-C-1] o.a.k.c.c.i.AbstractCoordinator:? [Consumer clientId=consumer-smiler.user-1, groupId=smiler.user] (Re-)joining group
+2021-06-27 22:50:01,797 [INFO] [1-0-C-1] o.a.k.c.c.i.ConsumerCoordinator:? [Consumer clientId=consumer-smiler.user-1, groupId=smiler.user] Finished assignment for group at generation 10: {consumer-smiler.user-1-8f91dc0a-05d9-4fba-bdb0-964ec9a05a98=Assignment(partitions=[smiler.user.index-0])}
+2021-06-27 22:50:01,802 [INFO] [1-0-C-1] o.a.k.c.c.i.AbstractCoordinator:? [Consumer clientId=consumer-smiler.user-1, groupId=smiler.user] Successfully joined group with generation 10
+2021-06-27 22:50:01,806 [INFO] [1-0-C-1] o.a.k.c.c.i.ConsumerCoordinator:? [Consumer clientId=consumer-smiler.user-1, groupId=smiler.user] Adding newly assigned partitions: smiler.user.index-0
+2021-06-27 22:50:01,818 [INFO] [1-0-C-1] o.a.k.c.c.i.ConsumerCoordinator:? [Consumer clientId=consumer-smiler.user-1, groupId=smiler.user] Setting offset for partition smiler.user.index-0 to the committed offset FetchPosition{offset=2, offsetEpoch=Optional.empty, currentLeader=LeaderAndEpoch{leader=Optional[localhost:9092 (id: 0 rack: null)], epoch=0}}
+2021-06-27 22:50:01,818 [INFO] [1-0-C-1] o.s.k.l.KafkaMessageListenerContainer:? smiler.user: partitions assigned: [smiler.user.index-0]
+2021-06-27 22:50:02,556 [INFO] [main] o.s.a.r.l.SimpleMessageListenerContainer:? Broker not available; cannot force queue declarations during start: java.net.ConnectException: Connection refused (Connection refused)
+2021-06-27 22:50:02,565 [INFO] [org.springframework.amqp.rabbit.RabbitListenerEndpointContainer#0-1] o.s.a.r.c.CachingConnectionFactory:? Attempting to connect to: [127.0.0.1:5672]
+2021-06-27 22:50:03,577 [INFO] [main] c.s.m.MemberIndexApplication:? Started MemberIndexApplication in 5.489 seconds (JVM running for 6.106)
+2021-06-27 22:50:08,662 [INFO] [org.springframework.amqp.rabbit.RabbitListenerEndpointContainer#0-1] o.s.a.r.l.SimpleMessageListenerContainer:? Restarting Consumer@21280cbb: tags=[[]], channel=null, acknowledgeMode=AUTO local queue size=0
+2021-06-27 22:50:08,664 [INFO] [org.springframework.amqp.rabbit.RabbitListenerEndpointContainer#0-2] o.s.a.r.c.CachingConnectionFactory:? Attempting to connect to: [127.0.0.1:5672]
+2021-06-27 22:50:14,748 [INFO] [org.springframework.amqp.rabbit.RabbitListenerEndpointContainer#0-2] o.s.a.r.l.SimpleMessageListenerContainer:? Restarting Consumer@5aa1b771: tags=[[]], channel=null, acknowledgeMode=AUTO local queue size=0
+2021-06-27 22:50:14,749 [INFO] [org.springframework.amqp.rabbit.RabbitListenerEndpointContainer#0-3] o.s.a.r.c.CachingConnectionFactory:? Attempting to connect to: [127.0.0.1:5672]
+2021-06-27 22:50:20,831 [INFO] [org.springframework.amqp.rabbit.RabbitListenerEndpointContainer#0-3] o.s.a.r.l.SimpleMessageListenerContainer:? Restarting Consumer@60556090: tags=[[]], channel=null, acknowledgeMode=AUTO local queue size=0
+2021-06-27 22:50:20,832 [INFO] [org.springframework.amqp.rabbit.RabbitListenerEndpointContainer#0-4] o.s.a.r.c.CachingConnectionFactory:? Attempting to connect to: [127.0.0.1:5672]
+2021-06-27 22:50:26,916 [INFO] [org.springframework.amqp.rabbit.RabbitListenerEndpointContainer#0-4] o.s.a.r.l.SimpleMessageListenerContainer:? Restarting Consumer@3b5e40ee: tags=[[]], channel=null, acknowledgeMode=AUTO local queue size=0
+2021-06-27 22:50:26,917 [INFO] [org.springframework.amqp.rabbit.RabbitListenerEndpointContainer#0-5] o.s.a.r.c.CachingConnectionFactory:? Attempting to connect to: [127.0.0.1:5672]
+2021-06-27 22:50:33,002 [INFO] [org.springframework.amqp.rabbit.RabbitListenerEndpointContainer#0-5] o.s.a.r.l.SimpleMessageListenerContainer:? Restarting Consumer@1aa7699e: tags=[[]], channel=null, acknowledgeMode=AUTO local queue size=0
+2021-06-27 22:50:33,003 [INFO] [org.springframework.amqp.rabbit.RabbitListenerEndpointContainer#0-6] o.s.a.r.c.CachingConnectionFactory:? Attempting to connect to: [127.0.0.1:5672]
+2021-06-27 22:50:39,093 [INFO] [org.springframework.amqp.rabbit.RabbitListenerEndpointContainer#0-6] o.s.a.r.l.SimpleMessageListenerContainer:? Restarting Consumer@6718a853: tags=[[]], channel=null, acknowledgeMode=AUTO local queue size=0
+2021-06-27 22:50:39,094 [INFO] [org.springframework.amqp.rabbit.RabbitListenerEndpointContainer#0-7] o.s.a.r.c.CachingConnectionFactory:? Attempting to connect to: [127.0.0.1:5672]
+2021-06-27 22:50:45,171 [INFO] [org.springframework.amqp.rabbit.RabbitListenerEndpointContainer#0-7] o.s.a.r.l.SimpleMessageListenerContainer:? Restarting Consumer@319ec9d6: tags=[[]], channel=null, acknowledgeMode=AUTO local queue size=0
+2021-06-27 22:50:45,172 [INFO] [org.springframework.amqp.rabbit.RabbitListenerEndpointContainer#0-8] o.s.a.r.c.CachingConnectionFactory:? Attempting to connect to: [127.0.0.1:5672]
+2021-06-27 22:50:51,271 [INFO] [org.springframework.amqp.rabbit.RabbitListenerEndpointContainer#0-8] o.s.a.r.l.SimpleMessageListenerContainer:? Restarting Consumer@38777139: tags=[[]], channel=null, acknowledgeMode=AUTO local queue size=0
+2021-06-27 22:50:51,272 [INFO] [org.springframework.amqp.rabbit.RabbitListenerEndpointContainer#0-9] o.s.a.r.c.CachingConnectionFactory:? Attempting to connect to: [127.0.0.1:5672]
+2021-06-27 22:50:57,356 [INFO] [org.springframework.amqp.rabbit.RabbitListenerEndpointContainer#0-9] o.s.a.r.l.SimpleMessageListenerContainer:? Restarting Consumer@315ce09f: tags=[[]], channel=null, acknowledgeMode=AUTO local queue size=0
+2021-06-27 22:50:57,357 [INFO] [org.springframework.amqp.rabbit.RabbitListenerEndpointContainer#0-10] o.s.a.r.c.CachingConnectionFactory:? Attempting to connect to: [127.0.0.1:5672]
+2021-06-27 22:51:03,455 [INFO] [org.springframework.amqp.rabbit.RabbitListenerEndpointContainer#0-10] o.s.a.r.l.SimpleMessageListenerContainer:? Restarting Consumer@44414448: tags=[[]], channel=null, acknowledgeMode=AUTO local queue size=0
+2021-06-27 22:51:03,455 [INFO] [org.springframework.amqp.rabbit.RabbitListenerEndpointContainer#0-11] o.s.a.r.c.CachingConnectionFactory:? Attempting to connect to: [127.0.0.1:5672]
+2021-06-27 22:51:09,538 [INFO] [org.springframework.amqp.rabbit.RabbitListenerEndpointContainer#0-11] o.s.a.r.l.SimpleMessageListenerContainer:? Restarting Consumer@667f6d1b: tags=[[]], channel=null, acknowledgeMode=AUTO local queue size=0
+2021-06-27 22:51:09,539 [INFO] [org.springframework.amqp.rabbit.RabbitListenerEndpointContainer#0-12] o.s.a.r.c.CachingConnectionFactory:? Attempting to connect to: [127.0.0.1:5672]
+2021-06-27 22:51:15,618 [INFO] [org.springframework.amqp.rabbit.RabbitListenerEndpointContainer#0-12] o.s.a.r.l.SimpleMessageListenerContainer:? Restarting Consumer@3fc3a696: tags=[[]], channel=null, acknowledgeMode=AUTO local queue size=0
+2021-06-27 22:51:15,618 [INFO] [org.springframework.amqp.rabbit.RabbitListenerEndpointContainer#0-13] o.s.a.r.c.CachingConnectionFactory:? Attempting to connect to: [127.0.0.1:5672]
+2021-06-27 22:51:21,707 [INFO] [org.springframework.amqp.rabbit.RabbitListenerEndpointContainer#0-13] o.s.a.r.l.SimpleMessageListenerContainer:? Restarting Consumer@78049b87: tags=[[]], channel=null, acknowledgeMode=AUTO local queue size=0
+2021-06-27 22:51:21,708 [INFO] [org.springframework.amqp.rabbit.RabbitListenerEndpointContainer#0-14] o.s.a.r.c.CachingConnectionFactory:? Attempting to connect to: [127.0.0.1:5672]
+2021-06-27 22:51:27,789 [INFO] [org.springframework.amqp.rabbit.RabbitListenerEndpointContainer#0-14] o.s.a.r.l.SimpleMessageListenerContainer:? Restarting Consumer@2182624: tags=[[]], channel=null, acknowledgeMode=AUTO local queue size=0
+2021-06-27 22:51:27,789 [INFO] [org.springframework.amqp.rabbit.RabbitListenerEndpointContainer#0-15] o.s.a.r.c.CachingConnectionFactory:? Attempting to connect to: [127.0.0.1:5672]
+2021-06-27 22:51:33,881 [INFO] [org.springframework.amqp.rabbit.RabbitListenerEndpointContainer#0-15] o.s.a.r.l.SimpleMessageListenerContainer:? Restarting Consumer@19690a08: tags=[[]], channel=null, acknowledgeMode=AUTO local queue size=0
+2021-06-27 22:51:33,882 [INFO] [org.springframework.amqp.rabbit.RabbitListenerEndpointContainer#0-16] o.s.a.r.c.CachingConnectionFactory:? Attempting to connect to: [127.0.0.1:5672]
+2021-06-27 22:51:39,965 [INFO] [org.springframework.amqp.rabbit.RabbitListenerEndpointContainer#0-16] o.s.a.r.l.SimpleMessageListenerContainer:? Restarting Consumer@3900d432: tags=[[]], channel=null, acknowledgeMode=AUTO local queue size=0
+2021-06-27 22:51:39,966 [INFO] [org.springframework.amqp.rabbit.RabbitListenerEndpointContainer#0-17] o.s.a.r.c.CachingConnectionFactory:? Attempting to connect to: [127.0.0.1:5672]
+2021-06-27 22:51:46,057 [INFO] [org.springframework.amqp.rabbit.RabbitListenerEndpointContainer#0-17] o.s.a.r.l.SimpleMessageListenerContainer:? Restarting Consumer@5eac80c0: tags=[[]], channel=null, acknowledgeMode=AUTO local queue size=0
+2021-06-27 22:51:46,057 [INFO] [org.springframework.amqp.rabbit.RabbitListenerEndpointContainer#0-18] o.s.a.r.c.CachingConnectionFactory:? Attempting to connect to: [127.0.0.1:5672]
+2021-06-27 22:51:52,139 [INFO] [org.springframework.amqp.rabbit.RabbitListenerEndpointContainer#0-18] o.s.a.r.l.SimpleMessageListenerContainer:? Restarting Consumer@2fb2cee0: tags=[[]], channel=null, acknowledgeMode=AUTO local queue size=0
+2021-06-27 22:51:52,140 [INFO] [org.springframework.amqp.rabbit.RabbitListenerEndpointContainer#0-19] o.s.a.r.c.CachingConnectionFactory:? Attempting to connect to: [127.0.0.1:5672]
+2021-06-27 22:51:58,224 [INFO] [org.springframework.amqp.rabbit.RabbitListenerEndpointContainer#0-19] o.s.a.r.l.SimpleMessageListenerContainer:? Restarting Consumer@6e26a2ae: tags=[[]], channel=null, acknowledgeMode=AUTO local queue size=0
+2021-06-27 22:51:58,224 [INFO] [org.springframework.amqp.rabbit.RabbitListenerEndpointContainer#0-20] o.s.a.r.c.CachingConnectionFactory:? Attempting to connect to: [127.0.0.1:5672]
+2021-06-27 22:52:04,317 [INFO] [org.springframework.amqp.rabbit.RabbitListenerEndpointContainer#0-20] o.s.a.r.l.SimpleMessageListenerContainer:? Restarting Consumer@8ddd611: tags=[[]], channel=null, acknowledgeMode=AUTO local queue size=0
+2021-06-27 22:52:04,317 [INFO] [org.springframework.amqp.rabbit.RabbitListenerEndpointContainer#0-21] o.s.a.r.c.CachingConnectionFactory:? Attempting to connect to: [127.0.0.1:5672]
+2021-06-27 22:52:10,413 [INFO] [org.springframework.amqp.rabbit.RabbitListenerEndpointContainer#0-21] o.s.a.r.l.SimpleMessageListenerContainer:? Restarting Consumer@5981dbe8: tags=[[]], channel=null, acknowledgeMode=AUTO local queue size=0
+2021-06-27 22:52:10,414 [INFO] [org.springframework.amqp.rabbit.RabbitListenerEndpointContainer#0-22] o.s.a.r.c.CachingConnectionFactory:? Attempting to connect to: [127.0.0.1:5672]
+2021-06-27 22:52:16,493 [INFO] [org.springframework.amqp.rabbit.RabbitListenerEndpointContainer#0-22] o.s.a.r.l.SimpleMessageListenerContainer:? Restarting Consumer@45aadef2: tags=[[]], channel=null, acknowledgeMode=AUTO local queue size=0
+2021-06-27 22:52:16,511 [INFO] [org.springframework.amqp.rabbit.RabbitListenerEndpointContainer#0-23] o.s.a.r.c.CachingConnectionFactory:? Attempting to connect to: [127.0.0.1:5672]
+2021-06-27 22:52:22,601 [INFO] [org.springframework.amqp.rabbit.RabbitListenerEndpointContainer#0-23] o.s.a.r.l.SimpleMessageListenerContainer:? Restarting Consumer@60de99d3: tags=[[]], channel=null, acknowledgeMode=AUTO local queue size=0
+2021-06-27 22:52:22,602 [INFO] [org.springframework.amqp.rabbit.RabbitListenerEndpointContainer#0-24] o.s.a.r.c.CachingConnectionFactory:? Attempting to connect to: [127.0.0.1:5672]
+2021-06-27 22:52:28,677 [INFO] [org.springframework.amqp.rabbit.RabbitListenerEndpointContainer#0-24] o.s.a.r.l.SimpleMessageListenerContainer:? Restarting Consumer@1d9f0a42: tags=[[]], channel=null, acknowledgeMode=AUTO local queue size=0
+2021-06-27 22:52:28,677 [INFO] [org.springframework.amqp.rabbit.RabbitListenerEndpointContainer#0-25] o.s.a.r.c.CachingConnectionFactory:? Attempting to connect to: [127.0.0.1:5672]
+2021-06-27 22:52:34,758 [INFO] [org.springframework.amqp.rabbit.RabbitListenerEndpointContainer#0-25] o.s.a.r.l.SimpleMessageListenerContainer:? Restarting Consumer@51d044e8: tags=[[]], channel=null, acknowledgeMode=AUTO local queue size=0
+2021-06-27 22:52:34,759 [INFO] [org.springframework.amqp.rabbit.RabbitListenerEndpointContainer#0-26] o.s.a.r.c.CachingConnectionFactory:? Attempting to connect to: [127.0.0.1:5672]
+2021-06-27 22:52:40,846 [INFO] [org.springframework.amqp.rabbit.RabbitListenerEndpointContainer#0-26] o.s.a.r.l.SimpleMessageListenerContainer:? Restarting Consumer@3173c48: tags=[[]], channel=null, acknowledgeMode=AUTO local queue size=0
+2021-06-27 22:52:40,846 [INFO] [org.springframework.amqp.rabbit.RabbitListenerEndpointContainer#0-27] o.s.a.r.c.CachingConnectionFactory:? Attempting to connect to: [127.0.0.1:5672]
+2021-06-27 22:52:46,940 [INFO] [org.springframework.amqp.rabbit.RabbitListenerEndpointContainer#0-27] o.s.a.r.l.SimpleMessageListenerContainer:? Restarting Consumer@4ed63312: tags=[[]], channel=null, acknowledgeMode=AUTO local queue size=0
+2021-06-27 22:52:46,940 [INFO] [org.springframework.amqp.rabbit.RabbitListenerEndpointContainer#0-28] o.s.a.r.c.CachingConnectionFactory:? Attempting to connect to: [127.0.0.1:5672]
+2021-06-27 22:52:53,034 [INFO] [org.springframework.amqp.rabbit.RabbitListenerEndpointContainer#0-28] o.s.a.r.l.SimpleMessageListenerContainer:? Restarting Consumer@28fc5d30: tags=[[]], channel=null, acknowledgeMode=AUTO local queue size=0
+2021-06-27 22:52:53,035 [INFO] [org.springframework.amqp.rabbit.RabbitListenerEndpointContainer#0-29] o.s.a.r.c.CachingConnectionFactory:? Attempting to connect to: [127.0.0.1:5672]
+2021-06-27 22:52:59,127 [INFO] [org.springframework.amqp.rabbit.RabbitListenerEndpointContainer#0-29] o.s.a.r.l.SimpleMessageListenerContainer:? Restarting Consumer@53140b5e: tags=[[]], channel=null, acknowledgeMode=AUTO local queue size=0
+2021-06-27 22:52:59,128 [INFO] [org.springframework.amqp.rabbit.RabbitListenerEndpointContainer#0-30] o.s.a.r.c.CachingConnectionFactory:? Attempting to connect to: [127.0.0.1:5672]
+2021-06-27 22:53:05,214 [INFO] [org.springframework.amqp.rabbit.RabbitListenerEndpointContainer#0-30] o.s.a.r.l.SimpleMessageListenerContainer:? Restarting Consumer@e11e809: tags=[[]], channel=null, acknowledgeMode=AUTO local queue size=0
+2021-06-27 22:53:05,215 [INFO] [org.springframework.amqp.rabbit.RabbitListenerEndpointContainer#0-31] o.s.a.r.c.CachingConnectionFactory:? Attempting to connect to: [127.0.0.1:5672]
+2021-06-27 22:53:11,298 [INFO] [org.springframework.amqp.rabbit.RabbitListenerEndpointContainer#0-31] o.s.a.r.l.SimpleMessageListenerContainer:? Restarting Consumer@87eb679: tags=[[]], channel=null, acknowledgeMode=AUTO local queue size=0
+2021-06-27 22:53:11,298 [INFO] [org.springframework.amqp.rabbit.RabbitListenerEndpointContainer#0-32] o.s.a.r.c.CachingConnectionFactory:? Attempting to connect to: [127.0.0.1:5672]
+2021-06-27 22:53:17,389 [INFO] [org.springframework.amqp.rabbit.RabbitListenerEndpointContainer#0-32] o.s.a.r.l.SimpleMessageListenerContainer:? Restarting Consumer@252ec90f: tags=[[]], channel=null, acknowledgeMode=AUTO local queue size=0
+2021-06-27 22:53:17,390 [INFO] [org.springframework.amqp.rabbit.RabbitListenerEndpointContainer#0-33] o.s.a.r.c.CachingConnectionFactory:? Attempting to connect to: [127.0.0.1:5672]
+2021-06-27 22:53:21,990 [INFO] [1-0-C-1] c.s.m.k.KafkaListenerService:? KafkaListenerService.receiveUserIndexMessage.msg:{"ids":[606660507776192512]}
+2021-06-27 22:53:27,523 [INFO] [org.springframework.amqp.rabbit.RabbitListenerEndpointContainer#0-33] o.s.a.r.l.SimpleMessageListenerContainer:? Restarting Consumer@58379158: tags=[[]], channel=null, acknowledgeMode=AUTO local queue size=0
+2021-06-27 22:53:27,525 [INFO] [org.springframework.amqp.rabbit.RabbitListenerEndpointContainer#0-34] o.s.a.r.c.CachingConnectionFactory:? Attempting to connect to: [127.0.0.1:5672]
+2021-06-27 22:53:41,643 [INFO] [kafka-coordinator-heartbeat-thread | smiler.user] o.a.k.c.c.i.AbstractCoordinator:? [Consumer clientId=consumer-smiler.user-1, groupId=smiler.user] Group coordinator localhost:9092 (id: 2147483647 rack: null) is unavailable or invalid, will attempt rediscovery
+2021-06-27 22:53:41,643 [INFO] [org.springframework.amqp.rabbit.RabbitListenerEndpointContainer#0-34] o.s.a.r.l.SimpleMessageListenerContainer:? Restarting Consumer@3f4838eb: tags=[[]], channel=null, acknowledgeMode=AUTO local queue size=0
+2021-06-27 22:53:41,644 [INFO] [org.springframework.amqp.rabbit.RabbitListenerEndpointContainer#0-35] o.s.a.r.c.CachingConnectionFactory:? Attempting to connect to: [127.0.0.1:5672]
+2021-06-27 22:53:41,703 [INFO] [1-0-C-1] c.a.d.p.DruidDataSource:? {dataSource-1} inited
+2021-06-27 22:53:41,751 [INFO] [kafka-coordinator-heartbeat-thread | smiler.user] o.a.k.c.c.i.AbstractCoordinator:? [Consumer clientId=consumer-smiler.user-1, groupId=smiler.user] Discovered group coordinator localhost:9092 (id: 2147483647 rack: null)
+2021-06-27 22:53:42,214 [INFO] [1-0-C-1] o.a.k.c.c.KafkaConsumer:? [Consumer clientId=consumer-smiler.user-1, groupId=smiler.user] Seeking to offset 2 for partition smiler.user.index-0
+2021-06-27 22:53:42,217 [INFO] [1-0-C-1] o.a.k.c.c.i.AbstractCoordinator:? [Consumer clientId=consumer-smiler.user-1, groupId=smiler.user] Attempt to heartbeat failed for since member id consumer-smiler.user-1-8f91dc0a-05d9-4fba-bdb0-964ec9a05a98 is not valid.
+2021-06-27 22:53:42,217 [INFO] [1-0-C-1] o.a.k.c.c.i.ConsumerCoordinator:? [Consumer clientId=consumer-smiler.user-1, groupId=smiler.user] Giving away all assigned partitions as lost since generation has been reset,indicating that consumer is no longer part of the group
+2021-06-27 22:53:42,217 [INFO] [1-0-C-1] o.a.k.c.c.i.ConsumerCoordinator:? [Consumer clientId=consumer-smiler.user-1, groupId=smiler.user] Lost previously assigned partitions smiler.user.index-0
+2021-06-27 22:53:42,218 [INFO] [1-0-C-1] o.s.k.l.KafkaMessageListenerContainer:? smiler.user: partitions lost: [smiler.user.index-0]
+2021-06-27 22:53:42,218 [INFO] [1-0-C-1] o.s.k.l.KafkaMessageListenerContainer:? smiler.user: partitions revoked: [smiler.user.index-0]
+2021-06-27 22:53:42,218 [INFO] [1-0-C-1] o.a.k.c.c.i.AbstractCoordinator:? [Consumer clientId=consumer-smiler.user-1, groupId=smiler.user] (Re-)joining group
+2021-06-27 22:53:42,219 [INFO] [1-0-C-1] o.a.k.c.c.i.AbstractCoordinator:? [Consumer clientId=consumer-smiler.user-1, groupId=smiler.user] Join group failed with org.apache.kafka.common.errors.MemberIdRequiredException: The group member needs to have a valid member id before actually entering a consumer group
+2021-06-27 22:53:42,219 [INFO] [1-0-C-1] o.a.k.c.c.i.AbstractCoordinator:? [Consumer clientId=consumer-smiler.user-1, groupId=smiler.user] (Re-)joining group
+2021-06-27 22:53:42,220 [INFO] [1-0-C-1] o.a.k.c.c.i.ConsumerCoordinator:? [Consumer clientId=consumer-smiler.user-1, groupId=smiler.user] Finished assignment for group at generation 12: {consumer-smiler.user-1-48964f11-ba31-42ec-941e-bd854682f195=Assignment(partitions=[smiler.user.index-0])}
+2021-06-27 22:53:42,221 [INFO] [1-0-C-1] o.a.k.c.c.i.AbstractCoordinator:? [Consumer clientId=consumer-smiler.user-1, groupId=smiler.user] Successfully joined group with generation 12
+2021-06-27 22:53:42,221 [INFO] [1-0-C-1] o.a.k.c.c.i.ConsumerCoordinator:? [Consumer clientId=consumer-smiler.user-1, groupId=smiler.user] Adding newly assigned partitions: smiler.user.index-0
+2021-06-27 22:53:42,223 [INFO] [1-0-C-1] o.a.k.c.c.i.ConsumerCoordinator:? [Consumer clientId=consumer-smiler.user-1, groupId=smiler.user] Setting offset for partition smiler.user.index-0 to the committed offset FetchPosition{offset=2, offsetEpoch=Optional.empty, currentLeader=LeaderAndEpoch{leader=Optional[localhost:9092 (id: 0 rack: null)], epoch=0}}
+2021-06-27 22:53:42,223 [INFO] [1-0-C-1] o.s.k.l.KafkaMessageListenerContainer:? smiler.user: partitions assigned: [smiler.user.index-0]
+2021-06-27 22:53:42,224 [INFO] [1-0-C-1] c.s.m.k.KafkaListenerService:? KafkaListenerService.receiveUserIndexMessage.msg:{"ids":[606660507776192512]}
+2021-06-27 22:53:48,410 [INFO] [1-0-C-1] o.a.k.c.c.KafkaConsumer:? [Consumer clientId=consumer-smiler.user-1, groupId=smiler.user] Seeking to offset 2 for partition smiler.user.index-0
+2021-06-27 22:53:48,412 [INFO] [1-0-C-1] c.s.m.k.KafkaListenerService:? KafkaListenerService.receiveUserIndexMessage.msg:{"ids":[606660507776192512]}
+2021-06-27 22:53:59,030 [INFO] [kafka-coordinator-heartbeat-thread | smiler.user] o.a.k.c.c.i.AbstractCoordinator:? [Consumer clientId=consumer-smiler.user-1, groupId=smiler.user] Group coordinator localhost:9092 (id: 2147483647 rack: null) is unavailable or invalid, will attempt rediscovery
+2021-06-27 22:53:59,030 [INFO] [org.springframework.amqp.rabbit.RabbitListenerEndpointContainer#0-35] o.s.a.r.l.SimpleMessageListenerContainer:? Restarting Consumer@3a367deb: tags=[[]], channel=null, acknowledgeMode=AUTO local queue size=0
+2021-06-27 22:53:59,032 [INFO] [org.springframework.amqp.rabbit.RabbitListenerEndpointContainer#0-36] o.s.a.r.c.CachingConnectionFactory:? Attempting to connect to: [127.0.0.1:5672]
+2021-06-27 22:53:59,036 [INFO] [1-0-C-1] o.a.k.c.c.KafkaConsumer:? [Consumer clientId=consumer-smiler.user-1, groupId=smiler.user] Seeking to offset 2 for partition smiler.user.index-0
+2021-06-27 22:53:59,037 [INFO] [1-0-C-1] o.a.k.c.c.i.AbstractCoordinator:? [Consumer clientId=consumer-smiler.user-1, groupId=smiler.user] Discovered group coordinator localhost:9092 (id: 2147483647 rack: null)
+2021-06-27 22:53:59,037 [INFO] [1-0-C-1] o.a.k.c.c.i.AbstractCoordinator:? [Consumer clientId=consumer-smiler.user-1, groupId=smiler.user] Group coordinator localhost:9092 (id: 2147483647 rack: null) is unavailable or invalid, will attempt rediscovery
+2021-06-27 22:53:59,038 [INFO] [1-0-C-1] c.s.m.k.KafkaListenerService:? KafkaListenerService.receiveUserIndexMessage.msg:{"ids":[606660507776192512]}
+2021-06-27 22:54:06,230 [INFO] [kafka-coordinator-heartbeat-thread | smiler.user] o.a.k.c.c.i.AbstractCoordinator:? [Consumer clientId=consumer-smiler.user-1, groupId=smiler.user] Discovered group coordinator localhost:9092 (id: 2147483647 rack: null)
+2021-06-27 22:54:38,295 [INFO] [org.springframework.amqp.rabbit.RabbitListenerEndpointContainer#0-36] o.s.a.r.l.SimpleMessageListenerContainer:? Restarting Consumer@77722cf5: tags=[[]], channel=null, acknowledgeMode=AUTO local queue size=0
+2021-06-27 22:54:38,296 [INFO] [org.springframework.amqp.rabbit.RabbitListenerEndpointContainer#0-37] o.s.a.r.c.CachingConnectionFactory:? Attempting to connect to: [127.0.0.1:5672]
+2021-06-27 22:54:38,297 [INFO] [kafka-coordinator-heartbeat-thread | smiler.user] o.a.k.c.c.i.AbstractCoordinator:? [Consumer clientId=consumer-smiler.user-1, groupId=smiler.user] Group coordinator localhost:9092 (id: 2147483647 rack: null) is unavailable or invalid, will attempt rediscovery
+2021-06-27 22:54:38,299 [INFO] [1-0-C-1] o.a.k.c.c.KafkaConsumer:? [Consumer clientId=consumer-smiler.user-1, groupId=smiler.user] Seeking to offset 2 for partition smiler.user.index-0
+2021-06-27 22:54:38,300 [INFO] [1-0-C-1] o.a.k.c.c.i.AbstractCoordinator:? [Consumer clientId=consumer-smiler.user-1, groupId=smiler.user] Discovered group coordinator localhost:9092 (id: 2147483647 rack: null)
+2021-06-27 22:54:38,300 [INFO] [1-0-C-1] o.a.k.c.c.i.AbstractCoordinator:? [Consumer clientId=consumer-smiler.user-1, groupId=smiler.user] Group coordinator localhost:9092 (id: 2147483647 rack: null) is unavailable or invalid, will attempt rediscovery
+2021-06-27 22:54:38,301 [INFO] [1-0-C-1] c.s.m.k.KafkaListenerService:? KafkaListenerService.receiveUserIndexMessage.msg:{"ids":[606660507776192512]}
+2021-06-27 22:54:38,306 [INFO] [1-0-C-1] o.a.k.c.c.KafkaConsumer:? [Consumer clientId=consumer-smiler.user-1, groupId=smiler.user] Seeking to offset 2 for partition smiler.user.index-0
+2021-06-27 22:54:38,306 [INFO] [1-0-C-1] o.a.k.c.c.i.AbstractCoordinator:? [Consumer clientId=consumer-smiler.user-1, groupId=smiler.user] Discovered group coordinator localhost:9092 (id: 2147483647 rack: null)
+2021-06-27 22:54:38,306 [INFO] [1-0-C-1] o.a.k.c.c.i.AbstractCoordinator:? [Consumer clientId=consumer-smiler.user-1, groupId=smiler.user] Group coordinator localhost:9092 (id: 2147483647 rack: null) is unavailable or invalid, will attempt rediscovery
+2021-06-27 22:54:38,369 [INFO] [SpringContextShutdownHook] o.s.a.r.l.SimpleMessageListenerContainer:? Waiting for workers to finish.
+2021-06-27 22:54:38,369 [INFO] [SpringContextShutdownHook] o.s.a.r.l.SimpleMessageListenerContainer:? Successfully waited for workers to finish.
+2021-06-27 22:54:38,387 [INFO] [1-0-C-1] o.a.k.c.c.i.ConsumerCoordinator:? [Consumer clientId=consumer-smiler.user-1, groupId=smiler.user] Revoke previously assigned partitions smiler.user.index-0
+2021-06-27 22:54:38,387 [INFO] [1-0-C-1] o.s.k.l.KafkaMessageListenerContainer:? smiler.user: partitions revoked: [smiler.user.index-0]
+2021-06-27 22:54:38,387 [INFO] [1-0-C-1] o.a.k.c.c.KafkaConsumer:? [Consumer clientId=consumer-smiler.user-1, groupId=smiler.user] Unsubscribed all topics or patterns and assigned partitions
+2021-06-27 22:54:38,387 [INFO] [1-0-C-1] o.s.s.c.ThreadPoolTaskScheduler:? Shutting down ExecutorService
+2021-06-27 22:54:38,390 [INFO] [1-0-C-1] o.s.k.l.KafkaMessageListenerContainer$ListenerConsumer:? smiler.user: Consumer stopped
+2021-06-27 22:54:38,395 [INFO] [SpringContextShutdownHook] o.s.a.r.l.SimpleMessageListenerContainer:? Shutdown ignored - container is not active already
+2021-06-27 22:54:38,396 [INFO] [SpringContextShutdownHook] o.s.s.c.ThreadPoolTaskExecutor:? Shutting down ExecutorService 'applicationTaskExecutor'
+2021-06-27 22:54:38,397 [INFO] [SpringContextShutdownHook] c.a.d.p.DruidDataSource:? {dataSource-1} closing ...
+2021-06-27 22:54:38,401 [INFO] [SpringContextShutdownHook] c.a.d.p.DruidDataSource:? {dataSource-1} closed
+2021-06-27 22:54:39,298 [INFO] [SpringContextShutdownHook] c.a.d.p.DruidDataSource:? {dataSource-1} closing ...
+2021-06-27 22:59:40,028 [INFO] [main] c.s.m.MemberIndexApplication:? Starting MemberIndexApplication on wangchaodeMacBook-Pro.local with PID 40689 (/Users/superking/Documents/project/ComprehensiveDemo/smiler-member-search/smiler-member-search-index/target/classes started by superking in /Users/superking/Documents/project/ComprehensiveDemo/smiler-member-search)
+2021-06-27 22:59:40,030 [INFO] [main] c.s.m.MemberIndexApplication:? The following profiles are active: dev
+2021-06-27 22:59:40,938 [INFO] [main] o.s.c.a.ConfigurationClassPostProcessor:? Cannot enhance @Configuration bean definition 'mybatisConfig' since its singleton instance has been created too early. The typical cause is a non-static @Bean method with a BeanDefinitionRegistryPostProcessor return type: Consider declaring such methods as 'static'.
+2021-06-27 22:59:41,318 [INFO] [main] o.s.b.w.e.t.TomcatWebServer:? Tomcat initialized with port(s): 8082 (http)
+2021-06-27 22:59:41,328 [INFO] [main] o.a.c.c.StandardService:? Starting service [Tomcat]
+2021-06-27 22:59:41,328 [INFO] [main] o.a.c.c.StandardEngine:? Starting Servlet engine: [Apache Tomcat/9.0.37]
+2021-06-27 22:59:41,410 [INFO] [main] o.a.c.c.C.[.[.[/]:? Initializing Spring embedded WebApplicationContext
+2021-06-27 22:59:41,410 [INFO] [main] o.s.b.w.s.c.ServletWebServerApplicationContext:? Root WebApplicationContext: initialization completed in 1335 ms
+2021-06-27 22:59:42,517 [INFO] [main] o.s.s.c.ThreadPoolTaskExecutor:? Initializing ExecutorService 'applicationTaskExecutor'
+2021-06-27 22:59:42,933 [INFO] [main] o.a.k.c.c.ConsumerConfig:? ConsumerConfig values: 
+	allow.auto.create.topics = true
+	auto.commit.interval.ms = 5000
+	auto.offset.reset = latest
+	bootstrap.servers = [localhost:9092]
+	check.crcs = true
+	client.dns.lookup = default
+	client.id = 
+	client.rack = 
+	connections.max.idle.ms = 540000
+	default.api.timeout.ms = 60000
+	enable.auto.commit = false
+	exclude.internal.topics = true
+	fetch.max.bytes = 52428800
+	fetch.max.wait.ms = 500
+	fetch.min.bytes = 1
+	group.id = smiler.user
+	group.instance.id = null
+	heartbeat.interval.ms = 3000
+	interceptor.classes = []
+	internal.leave.group.on.close = true
+	isolation.level = read_uncommitted
+	key.deserializer = class org.apache.kafka.common.serialization.StringDeserializer
+	max.partition.fetch.bytes = 1048576
+	max.poll.interval.ms = 300000
+	max.poll.records = 500
+	metadata.max.age.ms = 300000
+	metric.reporters = []
+	metrics.num.samples = 2
+	metrics.recording.level = INFO
+	metrics.sample.window.ms = 30000
+	partition.assignment.strategy = [class org.apache.kafka.clients.consumer.RangeAssignor]
+	receive.buffer.bytes = 65536
+	reconnect.backoff.max.ms = 1000
+	reconnect.backoff.ms = 50
+	request.timeout.ms = 30000
+	retry.backoff.ms = 100
+	sasl.client.callback.handler.class = null
+	sasl.jaas.config = null
+	sasl.kerberos.kinit.cmd = /usr/bin/kinit
+	sasl.kerberos.min.time.before.relogin = 60000
+	sasl.kerberos.service.name = null
+	sasl.kerberos.ticket.renew.jitter = 0.05
+	sasl.kerberos.ticket.renew.window.factor = 0.8
+	sasl.login.callback.handler.class = null
+	sasl.login.class = null
+	sasl.login.refresh.buffer.seconds = 300
+	sasl.login.refresh.min.period.seconds = 60
+	sasl.login.refresh.window.factor = 0.8
+	sasl.login.refresh.window.jitter = 0.05
+	sasl.mechanism = GSSAPI
+	security.protocol = PLAINTEXT
+	security.providers = null
+	send.buffer.bytes = 131072
+	session.timeout.ms = 10000
+	ssl.cipher.suites = null
+	ssl.enabled.protocols = [TLSv1.2]
+	ssl.endpoint.identification.algorithm = https
+	ssl.key.password = null
+	ssl.keymanager.algorithm = SunX509
+	ssl.keystore.location = null
+	ssl.keystore.password = null
+	ssl.keystore.type = JKS
+	ssl.protocol = TLSv1.2
+	ssl.provider = null
+	ssl.secure.random.implementation = null
+	ssl.trustmanager.algorithm = PKIX
+	ssl.truststore.location = null
+	ssl.truststore.password = null
+	ssl.truststore.type = JKS
+	value.deserializer = class org.apache.kafka.common.serialization.StringDeserializer
+
+2021-06-27 22:59:42,997 [INFO] [main] o.a.k.c.u.AppInfoParser:? Kafka version: 2.5.0
+2021-06-27 22:59:42,998 [INFO] [main] o.a.k.c.u.AppInfoParser:? Kafka commitId: 66563e712b0b9f84
+2021-06-27 22:59:42,998 [INFO] [main] o.a.k.c.u.AppInfoParser:? Kafka startTimeMs: 1624805982996
+2021-06-27 22:59:43,000 [INFO] [main] o.a.k.c.c.KafkaConsumer:? [Consumer clientId=consumer-smiler.user-1, groupId=smiler.user] Subscribed to topic(s): smiler.user.index
+2021-06-27 22:59:43,003 [INFO] [main] o.s.s.c.ThreadPoolTaskScheduler:? Initializing ExecutorService
+2021-06-27 22:59:43,035 [INFO] [main] o.s.b.w.e.t.TomcatWebServer:? Tomcat started on port(s): 8082 (http) with context path ''
+2021-06-27 22:59:43,036 [INFO] [main] o.s.a.r.c.CachingConnectionFactory:? Attempting to connect to: [127.0.0.1:5672]
+2021-06-27 22:59:43,280 [INFO] [1-0-C-1] o.a.k.c.Metadata:? [Consumer clientId=consumer-smiler.user-1, groupId=smiler.user] Cluster ID: eeYi3R63RGOOIOh0mqrcEQ
+2021-06-27 22:59:43,282 [INFO] [1-0-C-1] o.a.k.c.c.i.AbstractCoordinator:? [Consumer clientId=consumer-smiler.user-1, groupId=smiler.user] Discovered group coordinator localhost:9092 (id: 2147483647 rack: null)
+2021-06-27 22:59:43,284 [INFO] [1-0-C-1] o.a.k.c.c.i.AbstractCoordinator:? [Consumer clientId=consumer-smiler.user-1, groupId=smiler.user] (Re-)joining group
+2021-06-27 22:59:43,295 [INFO] [1-0-C-1] o.a.k.c.c.i.AbstractCoordinator:? [Consumer clientId=consumer-smiler.user-1, groupId=smiler.user] Join group failed with org.apache.kafka.common.errors.MemberIdRequiredException: The group member needs to have a valid member id before actually entering a consumer group
+2021-06-27 22:59:43,295 [INFO] [1-0-C-1] o.a.k.c.c.i.AbstractCoordinator:? [Consumer clientId=consumer-smiler.user-1, groupId=smiler.user] (Re-)joining group
+2021-06-27 22:59:43,301 [INFO] [1-0-C-1] o.a.k.c.c.i.ConsumerCoordinator:? [Consumer clientId=consumer-smiler.user-1, groupId=smiler.user] Finished assignment for group at generation 14: {consumer-smiler.user-1-d2334c75-0278-489f-ad73-861d491477c4=Assignment(partitions=[smiler.user.index-0])}
+2021-06-27 22:59:43,307 [INFO] [1-0-C-1] o.a.k.c.c.i.AbstractCoordinator:? [Consumer clientId=consumer-smiler.user-1, groupId=smiler.user] Successfully joined group with generation 14
+2021-06-27 22:59:43,312 [INFO] [1-0-C-1] o.a.k.c.c.i.ConsumerCoordinator:? [Consumer clientId=consumer-smiler.user-1, groupId=smiler.user] Adding newly assigned partitions: smiler.user.index-0
+2021-06-27 22:59:43,322 [INFO] [1-0-C-1] o.a.k.c.c.i.ConsumerCoordinator:? [Consumer clientId=consumer-smiler.user-1, groupId=smiler.user] Setting offset for partition smiler.user.index-0 to the committed offset FetchPosition{offset=2, offsetEpoch=Optional.empty, currentLeader=LeaderAndEpoch{leader=Optional[localhost:9092 (id: 0 rack: null)], epoch=0}}
+2021-06-27 22:59:43,323 [INFO] [1-0-C-1] o.s.k.l.KafkaMessageListenerContainer:? smiler.user: partitions assigned: [smiler.user.index-0]
+2021-06-27 22:59:43,368 [INFO] [1-0-C-1] c.s.m.k.KafkaListenerService:? KafkaListenerService.receiveUserIndexMessage.msg:{"ids":[606660507776192512]}
+2021-06-27 22:59:46,242 [INFO] [main] o.s.a.r.l.SimpleMessageListenerContainer:? Broker not available; cannot force queue declarations during start: java.net.ConnectException: Connection refused (Connection refused)
+2021-06-27 22:59:46,252 [INFO] [org.springframework.amqp.rabbit.RabbitListenerEndpointContainer#0-1] o.s.a.r.c.CachingConnectionFactory:? Attempting to connect to: [127.0.0.1:5672]
+2021-06-27 22:59:46,374 [INFO] [1-0-C-1] c.a.d.p.DruidDataSource:? {dataSource-1} inited
+2021-06-27 22:59:46,944 [INFO] [1-0-C-1] o.a.k.c.c.KafkaConsumer:? [Consumer clientId=consumer-smiler.user-1, groupId=smiler.user] Seeking to offset 2 for partition smiler.user.index-0
+2021-06-27 22:59:46,949 [INFO] [1-0-C-1] c.s.m.k.KafkaListenerService:? KafkaListenerService.receiveUserIndexMessage.msg:{"ids":[606660507776192512]}
+2021-06-27 22:59:49,323 [INFO] [1-0-C-1] o.a.k.c.c.KafkaConsumer:? [Consumer clientId=consumer-smiler.user-1, groupId=smiler.user] Seeking to offset 2 for partition smiler.user.index-0
+2021-06-27 22:59:49,327 [INFO] [1-0-C-1] c.s.m.k.KafkaListenerService:? KafkaListenerService.receiveUserIndexMessage.msg:{"ids":[606660507776192512]}
+2021-06-27 23:00:30,008 [INFO] [kafka-coordinator-heartbeat-thread | smiler.user] o.a.k.c.c.i.AbstractCoordinator:? [Consumer clientId=consumer-smiler.user-1, groupId=smiler.user] Group coordinator localhost:9092 (id: 2147483647 rack: null) is unavailable or invalid, will attempt rediscovery
+2021-06-27 23:00:30,013 [INFO] [main] c.s.m.MemberIndexApplication:? Started MemberIndexApplication in 50.533 seconds (JVM running for 51.505)
+2021-06-27 23:00:30,014 [INFO] [org.springframework.amqp.rabbit.RabbitListenerEndpointContainer#0-1] o.s.a.r.l.SimpleMessageListenerContainer:? Restarting Consumer@1fee4278: tags=[[]], channel=null, acknowledgeMode=AUTO local queue size=0
+2021-06-27 23:00:30,015 [INFO] [1-0-C-1] o.a.k.c.c.KafkaConsumer:? [Consumer clientId=consumer-smiler.user-1, groupId=smiler.user] Seeking to offset 2 for partition smiler.user.index-0
+2021-06-27 23:00:30,016 [INFO] [1-0-C-1] o.a.k.c.c.i.AbstractCoordinator:? [Consumer clientId=consumer-smiler.user-1, groupId=smiler.user] Discovered group coordinator localhost:9092 (id: 2147483647 rack: null)
+2021-06-27 23:00:30,016 [INFO] [1-0-C-1] o.a.k.c.c.i.AbstractCoordinator:? [Consumer clientId=consumer-smiler.user-1, groupId=smiler.user] Group coordinator localhost:9092 (id: 2147483647 rack: null) is unavailable or invalid, will attempt rediscovery
+2021-06-27 23:00:30,016 [INFO] [org.springframework.amqp.rabbit.RabbitListenerEndpointContainer#0-2] o.s.a.r.c.CachingConnectionFactory:? Attempting to connect to: [127.0.0.1:5672]
+2021-06-27 23:00:30,018 [INFO] [1-0-C-1] c.s.m.k.KafkaListenerService:? KafkaListenerService.receiveUserIndexMessage.msg:{"ids":[606660507776192512]}
+2021-06-27 23:00:30,620 [INFO] [kafka-coordinator-heartbeat-thread | smiler.user] o.a.k.c.c.i.AbstractCoordinator:? [Consumer clientId=consumer-smiler.user-1, groupId=smiler.user] Discovered group coordinator localhost:9092 (id: 2147483647 rack: null)
+2021-06-27 23:00:30,626 [INFO] [1-0-C-1] o.a.k.c.c.KafkaConsumer:? [Consumer clientId=consumer-smiler.user-1, groupId=smiler.user] Seeking to offset 2 for partition smiler.user.index-0
+2021-06-27 23:00:30,631 [INFO] [1-0-C-1] c.s.m.k.KafkaListenerService:? KafkaListenerService.receiveUserIndexMessage.msg:{"ids":[606660507776192512]}
+2021-06-27 23:00:30,992 [INFO] [kafka-coordinator-heartbeat-thread | smiler.user] o.a.k.c.c.i.AbstractCoordinator:? [Consumer clientId=consumer-smiler.user-1, groupId=smiler.user] Attempt to heartbeat failed for since member id consumer-smiler.user-1-d2334c75-0278-489f-ad73-861d491477c4 is not valid.
+2021-06-27 23:00:30,999 [INFO] [1-0-C-1] o.a.k.c.c.KafkaConsumer:? [Consumer clientId=consumer-smiler.user-1, groupId=smiler.user] Seeking to offset 2 for partition smiler.user.index-0
+2021-06-27 23:00:31,000 [INFO] [1-0-C-1] o.a.k.c.c.i.ConsumerCoordinator:? [Consumer clientId=consumer-smiler.user-1, groupId=smiler.user] Giving away all assigned partitions as lost since generation has been reset,indicating that consumer is no longer part of the group
+2021-06-27 23:00:31,000 [INFO] [1-0-C-1] o.a.k.c.c.i.ConsumerCoordinator:? [Consumer clientId=consumer-smiler.user-1, groupId=smiler.user] Lost previously assigned partitions smiler.user.index-0
+2021-06-27 23:00:31,000 [INFO] [1-0-C-1] o.s.k.l.KafkaMessageListenerContainer:? smiler.user: partitions lost: [smiler.user.index-0]
+2021-06-27 23:00:31,000 [INFO] [1-0-C-1] o.s.k.l.KafkaMessageListenerContainer:? smiler.user: partitions revoked: [smiler.user.index-0]
+2021-06-27 23:00:31,000 [INFO] [1-0-C-1] o.a.k.c.c.i.AbstractCoordinator:? [Consumer clientId=consumer-smiler.user-1, groupId=smiler.user] (Re-)joining group
+2021-06-27 23:00:31,002 [INFO] [1-0-C-1] o.a.k.c.c.i.AbstractCoordinator:? [Consumer clientId=consumer-smiler.user-1, groupId=smiler.user] Join group failed with org.apache.kafka.common.errors.MemberIdRequiredException: The group member needs to have a valid member id before actually entering a consumer group
+2021-06-27 23:00:31,002 [INFO] [1-0-C-1] o.a.k.c.c.i.AbstractCoordinator:? [Consumer clientId=consumer-smiler.user-1, groupId=smiler.user] (Re-)joining group
+2021-06-27 23:00:31,007 [INFO] [1-0-C-1] o.a.k.c.c.i.ConsumerCoordinator:? [Consumer clientId=consumer-smiler.user-1, groupId=smiler.user] Finished assignment for group at generation 16: {consumer-smiler.user-1-f29e9d94-78ee-463c-bb4c-2fc54f8bb869=Assignment(partitions=[smiler.user.index-0])}
+2021-06-27 23:00:31,010 [INFO] [1-0-C-1] o.a.k.c.c.i.AbstractCoordinator:? [Consumer clientId=consumer-smiler.user-1, groupId=smiler.user] Successfully joined group with generation 16
+2021-06-27 23:00:31,010 [INFO] [1-0-C-1] o.a.k.c.c.i.ConsumerCoordinator:? [Consumer clientId=consumer-smiler.user-1, groupId=smiler.user] Adding newly assigned partitions: smiler.user.index-0
+2021-06-27 23:00:31,013 [INFO] [1-0-C-1] o.a.k.c.c.i.ConsumerCoordinator:? [Consumer clientId=consumer-smiler.user-1, groupId=smiler.user] Setting offset for partition smiler.user.index-0 to the committed offset FetchPosition{offset=2, offsetEpoch=Optional.empty, currentLeader=LeaderAndEpoch{leader=Optional[localhost:9092 (id: 0 rack: null)], epoch=0}}
+2021-06-27 23:00:31,013 [INFO] [1-0-C-1] o.s.k.l.KafkaMessageListenerContainer:? smiler.user: partitions assigned: [smiler.user.index-0]
+2021-06-27 23:00:31,134 [INFO] [1-0-C-1] c.s.m.k.KafkaListenerService:? KafkaListenerService.receiveUserIndexMessage.msg:{"ids":[606660507776192512]}
+2021-06-27 23:00:31,367 [INFO] [1-0-C-1] o.a.k.c.c.KafkaConsumer:? [Consumer clientId=consumer-smiler.user-1, groupId=smiler.user] Seeking to offset 2 for partition smiler.user.index-0
+2021-06-27 23:00:31,638 [INFO] [1-0-C-1] c.s.m.k.KafkaListenerService:? KafkaListenerService.receiveUserIndexMessage.msg:{"ids":[606660507776192512]}
+2021-06-27 23:00:31,703 [INFO] [1-0-C-1] o.a.k.c.c.KafkaConsumer:? [Consumer clientId=consumer-smiler.user-1, groupId=smiler.user] Seeking to offset 2 for partition smiler.user.index-0
+2021-06-27 23:00:32,142 [INFO] [1-0-C-1] c.s.m.k.KafkaListenerService:? KafkaListenerService.receiveUserIndexMessage.msg:{"ids":[606660507776192512]}
+2021-06-27 23:01:14,398 [INFO] [kafka-coordinator-heartbeat-thread | smiler.user] o.a.k.c.c.i.AbstractCoordinator:? [Consumer clientId=consumer-smiler.user-1, groupId=smiler.user] Group coordinator localhost:9092 (id: 2147483647 rack: null) is unavailable or invalid, will attempt rediscovery
+2021-06-27 23:01:14,398 [INFO] [org.springframework.amqp.rabbit.RabbitListenerEndpointContainer#0-2] o.s.a.r.l.SimpleMessageListenerContainer:? Restarting Consumer@6ebdf990: tags=[[]], channel=null, acknowledgeMode=AUTO local queue size=0
+2021-06-27 23:01:14,399 [INFO] [org.springframework.amqp.rabbit.RabbitListenerEndpointContainer#0-3] o.s.a.r.c.CachingConnectionFactory:? Attempting to connect to: [127.0.0.1:5672]
+2021-06-27 23:01:14,405 [INFO] [1-0-C-1] o.a.k.c.c.KafkaConsumer:? [Consumer clientId=consumer-smiler.user-1, groupId=smiler.user] Seeking to offset 2 for partition smiler.user.index-0
+2021-06-27 23:01:14,406 [INFO] [1-0-C-1] o.a.k.c.c.i.AbstractCoordinator:? [Consumer clientId=consumer-smiler.user-1, groupId=smiler.user] Discovered group coordinator localhost:9092 (id: 2147483647 rack: null)
+2021-06-27 23:01:14,407 [INFO] [1-0-C-1] o.a.k.c.c.i.AbstractCoordinator:? [Consumer clientId=consumer-smiler.user-1, groupId=smiler.user] Group coordinator localhost:9092 (id: 2147483647 rack: null) is unavailable or invalid, will attempt rediscovery
+2021-06-27 23:01:14,409 [INFO] [1-0-C-1] c.s.m.k.KafkaListenerService:? KafkaListenerService.receiveUserIndexMessage.msg:{"ids":[606660507776192512]}
+2021-06-27 23:01:14,413 [INFO] [1-0-C-1] o.a.k.c.c.KafkaConsumer:? [Consumer clientId=consumer-smiler.user-1, groupId=smiler.user] Seeking to offset 2 for partition smiler.user.index-0
+2021-06-27 23:01:14,414 [INFO] [1-0-C-1] o.a.k.c.c.i.AbstractCoordinator:? [Consumer clientId=consumer-smiler.user-1, groupId=smiler.user] Discovered group coordinator localhost:9092 (id: 2147483647 rack: null)
+2021-06-27 23:01:14,414 [INFO] [1-0-C-1] o.a.k.c.c.i.AbstractCoordinator:? [Consumer clientId=consumer-smiler.user-1, groupId=smiler.user] Group coordinator localhost:9092 (id: 2147483647 rack: null) is unavailable or invalid, will attempt rediscovery
+2021-06-27 23:01:14,480 [INFO] [SpringContextShutdownHook] o.s.a.r.l.SimpleMessageListenerContainer:? Waiting for workers to finish.
+2021-06-27 23:01:14,480 [INFO] [SpringContextShutdownHook] o.s.a.r.l.SimpleMessageListenerContainer:? Successfully waited for workers to finish.
+2021-06-27 23:01:14,498 [INFO] [1-0-C-1] o.a.k.c.c.i.ConsumerCoordinator:? [Consumer clientId=consumer-smiler.user-1, groupId=smiler.user] Revoke previously assigned partitions smiler.user.index-0
+2021-06-27 23:01:14,498 [INFO] [1-0-C-1] o.s.k.l.KafkaMessageListenerContainer:? smiler.user: partitions revoked: [smiler.user.index-0]
+2021-06-27 23:01:14,498 [INFO] [1-0-C-1] o.a.k.c.c.KafkaConsumer:? [Consumer clientId=consumer-smiler.user-1, groupId=smiler.user] Unsubscribed all topics or patterns and assigned partitions
+2021-06-27 23:01:14,498 [INFO] [1-0-C-1] o.s.s.c.ThreadPoolTaskScheduler:? Shutting down ExecutorService
+2021-06-27 23:01:14,501 [INFO] [1-0-C-1] o.s.k.l.KafkaMessageListenerContainer$ListenerConsumer:? smiler.user: Consumer stopped
+2021-06-27 23:01:14,505 [INFO] [SpringContextShutdownHook] o.s.a.r.l.SimpleMessageListenerContainer:? Shutdown ignored - container is not active already
+2021-06-27 23:01:14,506 [INFO] [SpringContextShutdownHook] o.s.s.c.ThreadPoolTaskExecutor:? Shutting down ExecutorService 'applicationTaskExecutor'
+2021-06-27 23:01:14,508 [INFO] [SpringContextShutdownHook] c.a.d.p.DruidDataSource:? {dataSource-1} closing ...
+2021-06-27 23:01:14,511 [INFO] [SpringContextShutdownHook] c.a.d.p.DruidDataSource:? {dataSource-1} closed
+2021-06-27 23:01:15,402 [INFO] [SpringContextShutdownHook] c.a.d.p.DruidDataSource:? {dataSource-1} closing ...
+2021-06-27 23:02:14,882 [INFO] [main] c.s.m.MemberIndexApplication:? Starting MemberIndexApplication on wangchaodeMacBook-Pro.local with PID 40772 (/Users/superking/Documents/project/ComprehensiveDemo/smiler-member-search/smiler-member-search-index/target/classes started by superking in /Users/superking/Documents/project/ComprehensiveDemo/smiler-member-search)
+2021-06-27 23:02:14,885 [INFO] [main] c.s.m.MemberIndexApplication:? The following profiles are active: dev
+2021-06-27 23:02:15,845 [INFO] [main] o.s.c.a.ConfigurationClassPostProcessor:? Cannot enhance @Configuration bean definition 'mybatisConfig' since its singleton instance has been created too early. The typical cause is a non-static @Bean method with a BeanDefinitionRegistryPostProcessor return type: Consider declaring such methods as 'static'.
+2021-06-27 23:02:16,258 [INFO] [main] o.s.b.w.e.t.TomcatWebServer:? Tomcat initialized with port(s): 8082 (http)
+2021-06-27 23:02:16,267 [INFO] [main] o.a.c.c.StandardService:? Starting service [Tomcat]
+2021-06-27 23:02:16,267 [INFO] [main] o.a.c.c.StandardEngine:? Starting Servlet engine: [Apache Tomcat/9.0.37]
+2021-06-27 23:02:16,341 [INFO] [main] o.a.c.c.C.[.[.[/]:? Initializing Spring embedded WebApplicationContext
+2021-06-27 23:02:16,342 [INFO] [main] o.s.b.w.s.c.ServletWebServerApplicationContext:? Root WebApplicationContext: initialization completed in 1415 ms
+2021-06-27 23:02:17,403 [INFO] [main] o.s.s.c.ThreadPoolTaskExecutor:? Initializing ExecutorService 'applicationTaskExecutor'
+2021-06-27 23:02:17,815 [INFO] [main] o.a.k.c.c.ConsumerConfig:? ConsumerConfig values: 
+	allow.auto.create.topics = true
+	auto.commit.interval.ms = 5000
+	auto.offset.reset = latest
+	bootstrap.servers = [localhost:9092]
+	check.crcs = true
+	client.dns.lookup = default
+	client.id = 
+	client.rack = 
+	connections.max.idle.ms = 540000
+	default.api.timeout.ms = 60000
+	enable.auto.commit = false
+	exclude.internal.topics = true
+	fetch.max.bytes = 52428800
+	fetch.max.wait.ms = 500
+	fetch.min.bytes = 1
+	group.id = smiler.user
+	group.instance.id = null
+	heartbeat.interval.ms = 3000
+	interceptor.classes = []
+	internal.leave.group.on.close = true
+	isolation.level = read_uncommitted
+	key.deserializer = class org.apache.kafka.common.serialization.StringDeserializer
+	max.partition.fetch.bytes = 1048576
+	max.poll.interval.ms = 300000
+	max.poll.records = 500
+	metadata.max.age.ms = 300000
+	metric.reporters = []
+	metrics.num.samples = 2
+	metrics.recording.level = INFO
+	metrics.sample.window.ms = 30000
+	partition.assignment.strategy = [class org.apache.kafka.clients.consumer.RangeAssignor]
+	receive.buffer.bytes = 65536
+	reconnect.backoff.max.ms = 1000
+	reconnect.backoff.ms = 50
+	request.timeout.ms = 30000
+	retry.backoff.ms = 100
+	sasl.client.callback.handler.class = null
+	sasl.jaas.config = null
+	sasl.kerberos.kinit.cmd = /usr/bin/kinit
+	sasl.kerberos.min.time.before.relogin = 60000
+	sasl.kerberos.service.name = null
+	sasl.kerberos.ticket.renew.jitter = 0.05
+	sasl.kerberos.ticket.renew.window.factor = 0.8
+	sasl.login.callback.handler.class = null
+	sasl.login.class = null
+	sasl.login.refresh.buffer.seconds = 300
+	sasl.login.refresh.min.period.seconds = 60
+	sasl.login.refresh.window.factor = 0.8
+	sasl.login.refresh.window.jitter = 0.05
+	sasl.mechanism = GSSAPI
+	security.protocol = PLAINTEXT
+	security.providers = null
+	send.buffer.bytes = 131072
+	session.timeout.ms = 10000
+	ssl.cipher.suites = null
+	ssl.enabled.protocols = [TLSv1.2]
+	ssl.endpoint.identification.algorithm = https
+	ssl.key.password = null
+	ssl.keymanager.algorithm = SunX509
+	ssl.keystore.location = null
+	ssl.keystore.password = null
+	ssl.keystore.type = JKS
+	ssl.protocol = TLSv1.2
+	ssl.provider = null
+	ssl.secure.random.implementation = null
+	ssl.trustmanager.algorithm = PKIX
+	ssl.truststore.location = null
+	ssl.truststore.password = null
+	ssl.truststore.type = JKS
+	value.deserializer = class org.apache.kafka.common.serialization.StringDeserializer
+
+2021-06-27 23:02:17,892 [INFO] [main] o.a.k.c.u.AppInfoParser:? Kafka version: 2.5.0
+2021-06-27 23:02:17,894 [INFO] [main] o.a.k.c.u.AppInfoParser:? Kafka commitId: 66563e712b0b9f84
+2021-06-27 23:02:17,894 [INFO] [main] o.a.k.c.u.AppInfoParser:? Kafka startTimeMs: 1624806137890
+2021-06-27 23:02:17,898 [INFO] [main] o.a.k.c.c.KafkaConsumer:? [Consumer clientId=consumer-smiler.user-1, groupId=smiler.user] Subscribed to topic(s): smiler.user.index
+2021-06-27 23:02:17,901 [INFO] [main] o.s.s.c.ThreadPoolTaskScheduler:? Initializing ExecutorService
+2021-06-27 23:02:17,945 [INFO] [main] o.s.b.w.e.t.TomcatWebServer:? Tomcat started on port(s): 8082 (http) with context path ''
+2021-06-27 23:02:17,948 [INFO] [main] o.s.a.r.c.CachingConnectionFactory:? Attempting to connect to: [127.0.0.1:5672]
+2021-06-27 23:02:18,250 [INFO] [1-0-C-1] o.a.k.c.Metadata:? [Consumer clientId=consumer-smiler.user-1, groupId=smiler.user] Cluster ID: eeYi3R63RGOOIOh0mqrcEQ
+2021-06-27 23:02:18,252 [INFO] [1-0-C-1] o.a.k.c.c.i.AbstractCoordinator:? [Consumer clientId=consumer-smiler.user-1, groupId=smiler.user] Discovered group coordinator localhost:9092 (id: 2147483647 rack: null)
+2021-06-27 23:02:18,254 [INFO] [1-0-C-1] o.a.k.c.c.i.AbstractCoordinator:? [Consumer clientId=consumer-smiler.user-1, groupId=smiler.user] (Re-)joining group
+2021-06-27 23:02:18,264 [INFO] [1-0-C-1] o.a.k.c.c.i.AbstractCoordinator:? [Consumer clientId=consumer-smiler.user-1, groupId=smiler.user] Join group failed with org.apache.kafka.common.errors.MemberIdRequiredException: The group member needs to have a valid member id before actually entering a consumer group
+2021-06-27 23:02:18,264 [INFO] [1-0-C-1] o.a.k.c.c.i.AbstractCoordinator:? [Consumer clientId=consumer-smiler.user-1, groupId=smiler.user] (Re-)joining group
+2021-06-27 23:02:18,269 [INFO] [1-0-C-1] o.a.k.c.c.i.ConsumerCoordinator:? [Consumer clientId=consumer-smiler.user-1, groupId=smiler.user] Finished assignment for group at generation 18: {consumer-smiler.user-1-670e1f89-47b5-46fd-b083-74e810a4e168=Assignment(partitions=[smiler.user.index-0])}
+2021-06-27 23:02:18,275 [INFO] [1-0-C-1] o.a.k.c.c.i.AbstractCoordinator:? [Consumer clientId=consumer-smiler.user-1, groupId=smiler.user] Successfully joined group with generation 18
+2021-06-27 23:02:18,279 [INFO] [1-0-C-1] o.a.k.c.c.i.ConsumerCoordinator:? [Consumer clientId=consumer-smiler.user-1, groupId=smiler.user] Adding newly assigned partitions: smiler.user.index-0
+2021-06-27 23:02:18,291 [INFO] [1-0-C-1] o.a.k.c.c.i.ConsumerCoordinator:? [Consumer clientId=consumer-smiler.user-1, groupId=smiler.user] Setting offset for partition smiler.user.index-0 to the committed offset FetchPosition{offset=2, offsetEpoch=Optional.empty, currentLeader=LeaderAndEpoch{leader=Optional[localhost:9092 (id: 0 rack: null)], epoch=0}}
+2021-06-27 23:02:18,292 [INFO] [1-0-C-1] o.s.k.l.KafkaMessageListenerContainer:? smiler.user: partitions assigned: [smiler.user.index-0]
+2021-06-27 23:02:18,331 [INFO] [1-0-C-1] c.s.m.k.KafkaListenerService:? KafkaListenerService.receiveUserIndexMessage.msg:{"ids":[606660507776192512]}
+2021-06-27 23:02:22,637 [INFO] [main] o.s.a.r.l.SimpleMessageListenerContainer:? Broker not available; cannot force queue declarations during start: java.net.ConnectException: Connection refused (Connection refused)
+2021-06-27 23:02:22,652 [INFO] [org.springframework.amqp.rabbit.RabbitListenerEndpointContainer#0-1] o.s.a.r.c.CachingConnectionFactory:? Attempting to connect to: [127.0.0.1:5672]
+2021-06-27 23:02:22,806 [INFO] [1-0-C-1] c.a.d.p.DruidDataSource:? {dataSource-1} inited
+2021-06-27 23:02:23,072 [INFO] [1-0-C-1] c.s.m.k.KafkaListenerService:? KafkaListenerService.receiveUserIndexMessage.msg:{"ids":[606661980241137664]}
+2021-06-27 23:02:24,480 [INFO] [main] c.s.m.MemberIndexApplication:? Started MemberIndexApplication in 10.035 seconds (JVM running for 10.61)
+2021-06-27 23:02:29,402 [INFO] [org.springframework.amqp.rabbit.RabbitListenerEndpointContainer#0-1] o.s.a.r.l.SimpleMessageListenerContainer:? Restarting Consumer@1850f2da: tags=[[]], channel=null, acknowledgeMode=AUTO local queue size=0
+2021-06-27 23:02:29,405 [INFO] [org.springframework.amqp.rabbit.RabbitListenerEndpointContainer#0-2] o.s.a.r.c.CachingConnectionFactory:? Attempting to connect to: [127.0.0.1:5672]
+2021-06-27 23:02:35,489 [INFO] [org.springframework.amqp.rabbit.RabbitListenerEndpointContainer#0-2] o.s.a.r.l.SimpleMessageListenerContainer:? Restarting Consumer@12d224a8: tags=[[]], channel=null, acknowledgeMode=AUTO local queue size=0
+2021-06-27 23:02:35,490 [INFO] [org.springframework.amqp.rabbit.RabbitListenerEndpointContainer#0-3] o.s.a.r.c.CachingConnectionFactory:? Attempting to connect to: [127.0.0.1:5672]
+2021-06-27 23:02:41,571 [INFO] [org.springframework.amqp.rabbit.RabbitListenerEndpointContainer#0-3] o.s.a.r.l.SimpleMessageListenerContainer:? Restarting Consumer@37c7c5a4: tags=[[]], channel=null, acknowledgeMode=AUTO local queue size=0
+2021-06-27 23:02:41,572 [INFO] [org.springframework.amqp.rabbit.RabbitListenerEndpointContainer#0-4] o.s.a.r.c.CachingConnectionFactory:? Attempting to connect to: [127.0.0.1:5672]
+2021-06-27 23:02:47,659 [INFO] [org.springframework.amqp.rabbit.RabbitListenerEndpointContainer#0-4] o.s.a.r.l.SimpleMessageListenerContainer:? Restarting Consumer@6cf848d9: tags=[[]], channel=null, acknowledgeMode=AUTO local queue size=0
+2021-06-27 23:02:47,660 [INFO] [org.springframework.amqp.rabbit.RabbitListenerEndpointContainer#0-5] o.s.a.r.c.CachingConnectionFactory:? Attempting to connect to: [127.0.0.1:5672]
+2021-06-27 23:02:53,736 [INFO] [org.springframework.amqp.rabbit.RabbitListenerEndpointContainer#0-5] o.s.a.r.l.SimpleMessageListenerContainer:? Restarting Consumer@4423cc32: tags=[[]], channel=null, acknowledgeMode=AUTO local queue size=0
+2021-06-27 23:02:53,737 [INFO] [org.springframework.amqp.rabbit.RabbitListenerEndpointContainer#0-6] o.s.a.r.c.CachingConnectionFactory:? Attempting to connect to: [127.0.0.1:5672]
+2021-06-27 23:02:59,822 [INFO] [org.springframework.amqp.rabbit.RabbitListenerEndpointContainer#0-6] o.s.a.r.l.SimpleMessageListenerContainer:? Restarting Consumer@2ab5a290: tags=[[]], channel=null, acknowledgeMode=AUTO local queue size=0
+2021-06-27 23:02:59,823 [INFO] [org.springframework.amqp.rabbit.RabbitListenerEndpointContainer#0-7] o.s.a.r.c.CachingConnectionFactory:? Attempting to connect to: [127.0.0.1:5672]
+2021-06-27 23:03:05,913 [INFO] [org.springframework.amqp.rabbit.RabbitListenerEndpointContainer#0-7] o.s.a.r.l.SimpleMessageListenerContainer:? Restarting Consumer@2cad0760: tags=[[]], channel=null, acknowledgeMode=AUTO local queue size=0
+2021-06-27 23:03:05,914 [INFO] [org.springframework.amqp.rabbit.RabbitListenerEndpointContainer#0-8] o.s.a.r.c.CachingConnectionFactory:? Attempting to connect to: [127.0.0.1:5672]
+2021-06-27 23:03:12,005 [INFO] [org.springframework.amqp.rabbit.RabbitListenerEndpointContainer#0-8] o.s.a.r.l.SimpleMessageListenerContainer:? Restarting Consumer@315a7e4d: tags=[[]], channel=null, acknowledgeMode=AUTO local queue size=0
+2021-06-27 23:03:12,006 [INFO] [org.springframework.amqp.rabbit.RabbitListenerEndpointContainer#0-9] o.s.a.r.c.CachingConnectionFactory:? Attempting to connect to: [127.0.0.1:5672]
+2021-06-27 23:03:18,091 [INFO] [org.springframework.amqp.rabbit.RabbitListenerEndpointContainer#0-9] o.s.a.r.l.SimpleMessageListenerContainer:? Restarting Consumer@ca27881: tags=[[]], channel=null, acknowledgeMode=AUTO local queue size=0
+2021-06-27 23:03:18,092 [INFO] [org.springframework.amqp.rabbit.RabbitListenerEndpointContainer#0-10] o.s.a.r.c.CachingConnectionFactory:? Attempting to connect to: [127.0.0.1:5672]
+2021-06-27 23:03:24,188 [INFO] [org.springframework.amqp.rabbit.RabbitListenerEndpointContainer#0-10] o.s.a.r.l.SimpleMessageListenerContainer:? Restarting Consumer@57249c02: tags=[[]], channel=null, acknowledgeMode=AUTO local queue size=0
+2021-06-27 23:03:24,188 [INFO] [org.springframework.amqp.rabbit.RabbitListenerEndpointContainer#0-11] o.s.a.r.c.CachingConnectionFactory:? Attempting to connect to: [127.0.0.1:5672]
+2021-06-27 23:03:30,272 [INFO] [org.springframework.amqp.rabbit.RabbitListenerEndpointContainer#0-11] o.s.a.r.l.SimpleMessageListenerContainer:? Restarting Consumer@2eb713f5: tags=[[]], channel=null, acknowledgeMode=AUTO local queue size=0
+2021-06-27 23:03:30,273 [INFO] [org.springframework.amqp.rabbit.RabbitListenerEndpointContainer#0-12] o.s.a.r.c.CachingConnectionFactory:? Attempting to connect to: [127.0.0.1:5672]
+2021-06-27 23:03:36,367 [INFO] [org.springframework.amqp.rabbit.RabbitListenerEndpointContainer#0-12] o.s.a.r.l.SimpleMessageListenerContainer:? Restarting Consumer@426c31f7: tags=[[]], channel=null, acknowledgeMode=AUTO local queue size=0
+2021-06-27 23:03:36,368 [INFO] [org.springframework.amqp.rabbit.RabbitListenerEndpointContainer#0-13] o.s.a.r.c.CachingConnectionFactory:? Attempting to connect to: [127.0.0.1:5672]
+2021-06-27 23:03:42,461 [INFO] [org.springframework.amqp.rabbit.RabbitListenerEndpointContainer#0-13] o.s.a.r.l.SimpleMessageListenerContainer:? Restarting Consumer@4a3e1ed2: tags=[[]], channel=null, acknowledgeMode=AUTO local queue size=0
+2021-06-27 23:03:42,463 [INFO] [org.springframework.amqp.rabbit.RabbitListenerEndpointContainer#0-14] o.s.a.r.c.CachingConnectionFactory:? Attempting to connect to: [127.0.0.1:5672]
+2021-06-27 23:03:48,552 [INFO] [org.springframework.amqp.rabbit.RabbitListenerEndpointContainer#0-14] o.s.a.r.l.SimpleMessageListenerContainer:? Restarting Consumer@6078c7af: tags=[[]], channel=null, acknowledgeMode=AUTO local queue size=0
+2021-06-27 23:03:48,553 [INFO] [org.springframework.amqp.rabbit.RabbitListenerEndpointContainer#0-15] o.s.a.r.c.CachingConnectionFactory:? Attempting to connect to: [127.0.0.1:5672]
+2021-06-27 23:03:54,648 [INFO] [org.springframework.amqp.rabbit.RabbitListenerEndpointContainer#0-15] o.s.a.r.l.SimpleMessageListenerContainer:? Restarting Consumer@5346e12e: tags=[[]], channel=null, acknowledgeMode=AUTO local queue size=0
+2021-06-27 23:03:54,648 [INFO] [org.springframework.amqp.rabbit.RabbitListenerEndpointContainer#0-16] o.s.a.r.c.CachingConnectionFactory:? Attempting to connect to: [127.0.0.1:5672]
+2021-06-27 23:04:00,735 [INFO] [org.springframework.amqp.rabbit.RabbitListenerEndpointContainer#0-16] o.s.a.r.l.SimpleMessageListenerContainer:? Restarting Consumer@778a025d: tags=[[]], channel=null, acknowledgeMode=AUTO local queue size=0
+2021-06-27 23:04:00,736 [INFO] [org.springframework.amqp.rabbit.RabbitListenerEndpointContainer#0-17] o.s.a.r.c.CachingConnectionFactory:? Attempting to connect to: [127.0.0.1:5672]
+2021-06-27 23:04:06,931 [INFO] [org.springframework.amqp.rabbit.RabbitListenerEndpointContainer#0-17] o.s.a.r.l.SimpleMessageListenerContainer:? Restarting Consumer@3c887cb8: tags=[[]], channel=null, acknowledgeMode=AUTO local queue size=0
+2021-06-27 23:04:06,932 [INFO] [org.springframework.amqp.rabbit.RabbitListenerEndpointContainer#0-18] o.s.a.r.c.CachingConnectionFactory:? Attempting to connect to: [127.0.0.1:5672]
+2021-06-27 23:04:13,021 [INFO] [org.springframework.amqp.rabbit.RabbitListenerEndpointContainer#0-18] o.s.a.r.l.SimpleMessageListenerContainer:? Restarting Consumer@458ba13e: tags=[[]], channel=null, acknowledgeMode=AUTO local queue size=0
+2021-06-27 23:04:13,022 [INFO] [org.springframework.amqp.rabbit.RabbitListenerEndpointContainer#0-19] o.s.a.r.c.CachingConnectionFactory:? Attempting to connect to: [127.0.0.1:5672]
+2021-06-27 23:04:19,113 [INFO] [org.springframework.amqp.rabbit.RabbitListenerEndpointContainer#0-19] o.s.a.r.l.SimpleMessageListenerContainer:? Restarting Consumer@1ea165b7: tags=[[]], channel=null, acknowledgeMode=AUTO local queue size=0
+2021-06-27 23:04:19,113 [INFO] [org.springframework.amqp.rabbit.RabbitListenerEndpointContainer#0-20] o.s.a.r.c.CachingConnectionFactory:? Attempting to connect to: [127.0.0.1:5672]
+2021-06-27 23:04:25,211 [INFO] [org.springframework.amqp.rabbit.RabbitListenerEndpointContainer#0-20] o.s.a.r.l.SimpleMessageListenerContainer:? Restarting Consumer@29e35103: tags=[[]], channel=null, acknowledgeMode=AUTO local queue size=0
+2021-06-27 23:04:25,212 [INFO] [org.springframework.amqp.rabbit.RabbitListenerEndpointContainer#0-21] o.s.a.r.c.CachingConnectionFactory:? Attempting to connect to: [127.0.0.1:5672]
+2021-06-27 23:04:31,301 [INFO] [org.springframework.amqp.rabbit.RabbitListenerEndpointContainer#0-21] o.s.a.r.l.SimpleMessageListenerContainer:? Restarting Consumer@53d09038: tags=[[]], channel=null, acknowledgeMode=AUTO local queue size=0
+2021-06-27 23:04:31,301 [INFO] [org.springframework.amqp.rabbit.RabbitListenerEndpointContainer#0-22] o.s.a.r.c.CachingConnectionFactory:? Attempting to connect to: [127.0.0.1:5672]
+2021-06-27 23:04:37,391 [INFO] [org.springframework.amqp.rabbit.RabbitListenerEndpointContainer#0-22] o.s.a.r.l.SimpleMessageListenerContainer:? Restarting Consumer@960c5fd: tags=[[]], channel=null, acknowledgeMode=AUTO local queue size=0
+2021-06-27 23:04:37,392 [INFO] [org.springframework.amqp.rabbit.RabbitListenerEndpointContainer#0-23] o.s.a.r.c.CachingConnectionFactory:? Attempting to connect to: [127.0.0.1:5672]
+2021-06-27 23:04:43,476 [INFO] [org.springframework.amqp.rabbit.RabbitListenerEndpointContainer#0-23] o.s.a.r.l.SimpleMessageListenerContainer:? Restarting Consumer@10466654: tags=[[]], channel=null, acknowledgeMode=AUTO local queue size=0
+2021-06-27 23:04:43,477 [INFO] [org.springframework.amqp.rabbit.RabbitListenerEndpointContainer#0-24] o.s.a.r.c.CachingConnectionFactory:? Attempting to connect to: [127.0.0.1:5672]
+2021-06-27 23:04:49,563 [INFO] [org.springframework.amqp.rabbit.RabbitListenerEndpointContainer#0-24] o.s.a.r.l.SimpleMessageListenerContainer:? Restarting Consumer@4cac6a4c: tags=[[]], channel=null, acknowledgeMode=AUTO local queue size=0
+2021-06-27 23:04:49,564 [INFO] [org.springframework.amqp.rabbit.RabbitListenerEndpointContainer#0-25] o.s.a.r.c.CachingConnectionFactory:? Attempting to connect to: [127.0.0.1:5672]
+2021-06-27 23:04:55,640 [INFO] [org.springframework.amqp.rabbit.RabbitListenerEndpointContainer#0-25] o.s.a.r.l.SimpleMessageListenerContainer:? Restarting Consumer@671708c7: tags=[[]], channel=null, acknowledgeMode=AUTO local queue size=0
+2021-06-27 23:04:55,641 [INFO] [org.springframework.amqp.rabbit.RabbitListenerEndpointContainer#0-26] o.s.a.r.c.CachingConnectionFactory:? Attempting to connect to: [127.0.0.1:5672]
+2021-06-27 23:05:01,727 [INFO] [org.springframework.amqp.rabbit.RabbitListenerEndpointContainer#0-26] o.s.a.r.l.SimpleMessageListenerContainer:? Restarting Consumer@54132932: tags=[[]], channel=null, acknowledgeMode=AUTO local queue size=0
+2021-06-27 23:05:01,728 [INFO] [org.springframework.amqp.rabbit.RabbitListenerEndpointContainer#0-27] o.s.a.r.c.CachingConnectionFactory:? Attempting to connect to: [127.0.0.1:5672]
+2021-06-27 23:05:07,800 [INFO] [org.springframework.amqp.rabbit.RabbitListenerEndpointContainer#0-27] o.s.a.r.l.SimpleMessageListenerContainer:? Restarting Consumer@b2b38cf: tags=[[]], channel=null, acknowledgeMode=AUTO local queue size=0
+2021-06-27 23:05:07,800 [INFO] [org.springframework.amqp.rabbit.RabbitListenerEndpointContainer#0-28] o.s.a.r.c.CachingConnectionFactory:? Attempting to connect to: [127.0.0.1:5672]
+2021-06-27 23:05:13,884 [INFO] [org.springframework.amqp.rabbit.RabbitListenerEndpointContainer#0-28] o.s.a.r.l.SimpleMessageListenerContainer:? Restarting Consumer@50569f0: tags=[[]], channel=null, acknowledgeMode=AUTO local queue size=0
+2021-06-27 23:05:13,885 [INFO] [org.springframework.amqp.rabbit.RabbitListenerEndpointContainer#0-29] o.s.a.r.c.CachingConnectionFactory:? Attempting to connect to: [127.0.0.1:5672]
+2021-06-27 23:05:19,983 [INFO] [org.springframework.amqp.rabbit.RabbitListenerEndpointContainer#0-29] o.s.a.r.l.SimpleMessageListenerContainer:? Restarting Consumer@494340ec: tags=[[]], channel=null, acknowledgeMode=AUTO local queue size=0
+2021-06-27 23:05:19,984 [INFO] [org.springframework.amqp.rabbit.RabbitListenerEndpointContainer#0-30] o.s.a.r.c.CachingConnectionFactory:? Attempting to connect to: [127.0.0.1:5672]
+2021-06-27 23:05:26,059 [INFO] [org.springframework.amqp.rabbit.RabbitListenerEndpointContainer#0-30] o.s.a.r.l.SimpleMessageListenerContainer:? Restarting Consumer@54e42d82: tags=[[]], channel=null, acknowledgeMode=AUTO local queue size=0
+2021-06-27 23:05:26,060 [INFO] [org.springframework.amqp.rabbit.RabbitListenerEndpointContainer#0-31] o.s.a.r.c.CachingConnectionFactory:? Attempting to connect to: [127.0.0.1:5672]
+2021-06-27 23:05:32,140 [INFO] [org.springframework.amqp.rabbit.RabbitListenerEndpointContainer#0-31] o.s.a.r.l.SimpleMessageListenerContainer:? Restarting Consumer@68b6ba1e: tags=[[]], channel=null, acknowledgeMode=AUTO local queue size=0
+2021-06-27 23:05:32,141 [INFO] [org.springframework.amqp.rabbit.RabbitListenerEndpointContainer#0-32] o.s.a.r.c.CachingConnectionFactory:? Attempting to connect to: [127.0.0.1:5672]
+2021-06-27 23:05:38,232 [INFO] [org.springframework.amqp.rabbit.RabbitListenerEndpointContainer#0-32] o.s.a.r.l.SimpleMessageListenerContainer:? Restarting Consumer@3c7fce86: tags=[[]], channel=null, acknowledgeMode=AUTO local queue size=0
+2021-06-27 23:05:38,234 [INFO] [org.springframework.amqp.rabbit.RabbitListenerEndpointContainer#0-33] o.s.a.r.c.CachingConnectionFactory:? Attempting to connect to: [127.0.0.1:5672]
+2021-06-27 23:05:44,298 [INFO] [org.springframework.amqp.rabbit.RabbitListenerEndpointContainer#0-33] o.s.a.r.l.SimpleMessageListenerContainer:? Restarting Consumer@68a9cfcc: tags=[[]], channel=null, acknowledgeMode=AUTO local queue size=0
+2021-06-27 23:05:44,299 [INFO] [org.springframework.amqp.rabbit.RabbitListenerEndpointContainer#0-34] o.s.a.r.c.CachingConnectionFactory:? Attempting to connect to: [127.0.0.1:5672]
+2021-06-27 23:05:50,389 [INFO] [org.springframework.amqp.rabbit.RabbitListenerEndpointContainer#0-34] o.s.a.r.l.SimpleMessageListenerContainer:? Restarting Consumer@5df2f178: tags=[[]], channel=null, acknowledgeMode=AUTO local queue size=0
+2021-06-27 23:05:50,389 [INFO] [org.springframework.amqp.rabbit.RabbitListenerEndpointContainer#0-35] o.s.a.r.c.CachingConnectionFactory:? Attempting to connect to: [127.0.0.1:5672]
+2021-06-27 23:05:56,472 [INFO] [org.springframework.amqp.rabbit.RabbitListenerEndpointContainer#0-35] o.s.a.r.l.SimpleMessageListenerContainer:? Restarting Consumer@5b3b366d: tags=[[]], channel=null, acknowledgeMode=AUTO local queue size=0
+2021-06-27 23:05:56,472 [INFO] [org.springframework.amqp.rabbit.RabbitListenerEndpointContainer#0-36] o.s.a.r.c.CachingConnectionFactory:? Attempting to connect to: [127.0.0.1:5672]
+2021-06-27 23:06:02,565 [INFO] [org.springframework.amqp.rabbit.RabbitListenerEndpointContainer#0-36] o.s.a.r.l.SimpleMessageListenerContainer:? Restarting Consumer@4738d1c7: tags=[[]], channel=null, acknowledgeMode=AUTO local queue size=0
+2021-06-27 23:06:02,566 [INFO] [org.springframework.amqp.rabbit.RabbitListenerEndpointContainer#0-37] o.s.a.r.c.CachingConnectionFactory:? Attempting to connect to: [127.0.0.1:5672]
+2021-06-27 23:06:08,652 [INFO] [org.springframework.amqp.rabbit.RabbitListenerEndpointContainer#0-37] o.s.a.r.l.SimpleMessageListenerContainer:? Restarting Consumer@782a1a86: tags=[[]], channel=null, acknowledgeMode=AUTO local queue size=0
+2021-06-27 23:06:08,653 [INFO] [org.springframework.amqp.rabbit.RabbitListenerEndpointContainer#0-38] o.s.a.r.c.CachingConnectionFactory:? Attempting to connect to: [127.0.0.1:5672]
+2021-06-27 23:06:14,743 [INFO] [org.springframework.amqp.rabbit.RabbitListenerEndpointContainer#0-38] o.s.a.r.l.SimpleMessageListenerContainer:? Restarting Consumer@426190a0: tags=[[]], channel=null, acknowledgeMode=AUTO local queue size=0
+2021-06-27 23:06:14,743 [INFO] [org.springframework.amqp.rabbit.RabbitListenerEndpointContainer#0-39] o.s.a.r.c.CachingConnectionFactory:? Attempting to connect to: [127.0.0.1:5672]
+2021-06-27 23:06:16,249 [INFO] [SpringContextShutdownHook] o.s.a.r.l.SimpleMessageListenerContainer:? Waiting for workers to finish.
+2021-06-27 23:06:16,249 [INFO] [SpringContextShutdownHook] o.s.a.r.l.SimpleMessageListenerContainer:? Successfully waited for workers to finish.
+2021-06-27 23:06:16,268 [INFO] [1-0-C-1] o.a.k.c.c.i.ConsumerCoordinator:? [Consumer clientId=consumer-smiler.user-1, groupId=smiler.user] Revoke previously assigned partitions smiler.user.index-0
+2021-06-27 23:06:16,269 [INFO] [1-0-C-1] o.s.k.l.KafkaMessageListenerContainer:? smiler.user: partitions revoked: [smiler.user.index-0]
+2021-06-27 23:06:16,269 [INFO] [1-0-C-1] o.a.k.c.c.i.AbstractCoordinator:? [Consumer clientId=consumer-smiler.user-1, groupId=smiler.user] Member consumer-smiler.user-1-670e1f89-47b5-46fd-b083-74e810a4e168 sending LeaveGroup request to coordinator localhost:9092 (id: 2147483647 rack: null) due to the consumer unsubscribed from all topics
+2021-06-27 23:06:16,271 [INFO] [1-0-C-1] o.a.k.c.c.KafkaConsumer:? [Consumer clientId=consumer-smiler.user-1, groupId=smiler.user] Unsubscribed all topics or patterns and assigned partitions
+2021-06-27 23:06:16,271 [INFO] [1-0-C-1] o.s.s.c.ThreadPoolTaskScheduler:? Shutting down ExecutorService
+2021-06-27 23:06:16,282 [INFO] [1-0-C-1] o.s.k.l.KafkaMessageListenerContainer$ListenerConsumer:? smiler.user: Consumer stopped
+2021-06-27 23:06:16,286 [INFO] [SpringContextShutdownHook] o.s.a.r.l.SimpleMessageListenerContainer:? Shutdown ignored - container is not active already
+2021-06-27 23:06:16,287 [INFO] [SpringContextShutdownHook] o.s.s.c.ThreadPoolTaskExecutor:? Shutting down ExecutorService 'applicationTaskExecutor'
+2021-06-27 23:06:16,289 [INFO] [SpringContextShutdownHook] c.a.d.p.DruidDataSource:? {dataSource-1} closing ...
+2021-06-27 23:06:16,293 [INFO] [SpringContextShutdownHook] c.a.d.p.DruidDataSource:? {dataSource-1} closed
+2021-06-27 23:06:16,296 [INFO] [SpringContextShutdownHook] c.a.d.p.DruidDataSource:? {dataSource-1} closing ...
+2021-06-27 23:22:46,935 [INFO] [main] c.s.m.MemberIndexApplication:? Starting MemberIndexApplication on wangchaodeMacBook-Pro.local with PID 41378 (/Users/superking/Documents/project/ComprehensiveDemo/smiler-member-search/smiler-member-search-index/target/classes started by superking in /Users/superking/Documents/project/ComprehensiveDemo/smiler-member-search)
+2021-06-27 23:22:46,938 [INFO] [main] c.s.m.MemberIndexApplication:? The following profiles are active: dev
+2021-06-27 23:22:47,918 [INFO] [main] o.s.c.a.ConfigurationClassPostProcessor:? Cannot enhance @Configuration bean definition 'mybatisConfig' since its singleton instance has been created too early. The typical cause is a non-static @Bean method with a BeanDefinitionRegistryPostProcessor return type: Consider declaring such methods as 'static'.
+2021-06-27 23:22:48,347 [INFO] [main] o.s.b.w.e.t.TomcatWebServer:? Tomcat initialized with port(s): 8082 (http)
+2021-06-27 23:22:48,355 [INFO] [main] o.a.c.c.StandardService:? Starting service [Tomcat]
+2021-06-27 23:22:48,355 [INFO] [main] o.a.c.c.StandardEngine:? Starting Servlet engine: [Apache Tomcat/9.0.37]
+2021-06-27 23:22:48,456 [INFO] [main] o.a.c.c.C.[.[.[/]:? Initializing Spring embedded WebApplicationContext
+2021-06-27 23:22:48,457 [INFO] [main] o.s.b.w.s.c.ServletWebServerApplicationContext:? Root WebApplicationContext: initialization completed in 1483 ms
+2021-06-27 23:22:49,665 [INFO] [main] o.s.s.c.ThreadPoolTaskExecutor:? Initializing ExecutorService 'applicationTaskExecutor'
+2021-06-27 23:22:50,133 [INFO] [main] o.a.k.c.c.ConsumerConfig:? ConsumerConfig values: 
+	allow.auto.create.topics = true
+	auto.commit.interval.ms = 5000
+	auto.offset.reset = latest
+	bootstrap.servers = [localhost:9092]
+	check.crcs = true
+	client.dns.lookup = default
+	client.id = 
+	client.rack = 
+	connections.max.idle.ms = 540000
+	default.api.timeout.ms = 60000
+	enable.auto.commit = false
+	exclude.internal.topics = true
+	fetch.max.bytes = 52428800
+	fetch.max.wait.ms = 500
+	fetch.min.bytes = 1
+	group.id = smiler.user
+	group.instance.id = null
+	heartbeat.interval.ms = 3000
+	interceptor.classes = []
+	internal.leave.group.on.close = true
+	isolation.level = read_uncommitted
+	key.deserializer = class org.apache.kafka.common.serialization.StringDeserializer
+	max.partition.fetch.bytes = 1048576
+	max.poll.interval.ms = 300000
+	max.poll.records = 500
+	metadata.max.age.ms = 300000
+	metric.reporters = []
+	metrics.num.samples = 2
+	metrics.recording.level = INFO
+	metrics.sample.window.ms = 30000
+	partition.assignment.strategy = [class org.apache.kafka.clients.consumer.RangeAssignor]
+	receive.buffer.bytes = 65536
+	reconnect.backoff.max.ms = 1000
+	reconnect.backoff.ms = 50
+	request.timeout.ms = 30000
+	retry.backoff.ms = 100
+	sasl.client.callback.handler.class = null
+	sasl.jaas.config = null
+	sasl.kerberos.kinit.cmd = /usr/bin/kinit
+	sasl.kerberos.min.time.before.relogin = 60000
+	sasl.kerberos.service.name = null
+	sasl.kerberos.ticket.renew.jitter = 0.05
+	sasl.kerberos.ticket.renew.window.factor = 0.8
+	sasl.login.callback.handler.class = null
+	sasl.login.class = null
+	sasl.login.refresh.buffer.seconds = 300
+	sasl.login.refresh.min.period.seconds = 60
+	sasl.login.refresh.window.factor = 0.8
+	sasl.login.refresh.window.jitter = 0.05
+	sasl.mechanism = GSSAPI
+	security.protocol = PLAINTEXT
+	security.providers = null
+	send.buffer.bytes = 131072
+	session.timeout.ms = 10000
+	ssl.cipher.suites = null
+	ssl.enabled.protocols = [TLSv1.2]
+	ssl.endpoint.identification.algorithm = https
+	ssl.key.password = null
+	ssl.keymanager.algorithm = SunX509
+	ssl.keystore.location = null
+	ssl.keystore.password = null
+	ssl.keystore.type = JKS
+	ssl.protocol = TLSv1.2
+	ssl.provider = null
+	ssl.secure.random.implementation = null
+	ssl.trustmanager.algorithm = PKIX
+	ssl.truststore.location = null
+	ssl.truststore.password = null
+	ssl.truststore.type = JKS
+	value.deserializer = class org.apache.kafka.common.serialization.StringDeserializer
+
+2021-06-27 23:22:50,208 [INFO] [main] o.a.k.c.u.AppInfoParser:? Kafka version: 2.5.0
+2021-06-27 23:22:50,209 [INFO] [main] o.a.k.c.u.AppInfoParser:? Kafka commitId: 66563e712b0b9f84
+2021-06-27 23:22:50,209 [INFO] [main] o.a.k.c.u.AppInfoParser:? Kafka startTimeMs: 1624807370206
+2021-06-27 23:22:50,212 [INFO] [main] o.a.k.c.c.KafkaConsumer:? [Consumer clientId=consumer-smiler.user-1, groupId=smiler.user] Subscribed to topic(s): smiler.user.index
+2021-06-27 23:22:50,214 [INFO] [main] o.s.s.c.ThreadPoolTaskScheduler:? Initializing ExecutorService
+2021-06-27 23:22:50,250 [INFO] [main] o.s.b.w.e.t.TomcatWebServer:? Tomcat started on port(s): 8082 (http) with context path ''
+2021-06-27 23:22:50,252 [INFO] [main] o.s.a.r.c.CachingConnectionFactory:? Attempting to connect to: [127.0.0.1:5672]
+2021-06-27 23:22:50,523 [INFO] [1-0-C-1] o.a.k.c.Metadata:? [Consumer clientId=consumer-smiler.user-1, groupId=smiler.user] Cluster ID: eeYi3R63RGOOIOh0mqrcEQ
+2021-06-27 23:22:50,525 [INFO] [1-0-C-1] o.a.k.c.c.i.AbstractCoordinator:? [Consumer clientId=consumer-smiler.user-1, groupId=smiler.user] Discovered group coordinator localhost:9092 (id: 2147483647 rack: null)
+2021-06-27 23:22:50,527 [INFO] [1-0-C-1] o.a.k.c.c.i.AbstractCoordinator:? [Consumer clientId=consumer-smiler.user-1, groupId=smiler.user] (Re-)joining group
+2021-06-27 23:22:50,539 [INFO] [1-0-C-1] o.a.k.c.c.i.AbstractCoordinator:? [Consumer clientId=consumer-smiler.user-1, groupId=smiler.user] Join group failed with org.apache.kafka.common.errors.MemberIdRequiredException: The group member needs to have a valid member id before actually entering a consumer group
+2021-06-27 23:22:50,539 [INFO] [1-0-C-1] o.a.k.c.c.i.AbstractCoordinator:? [Consumer clientId=consumer-smiler.user-1, groupId=smiler.user] (Re-)joining group
+2021-06-27 23:22:50,550 [INFO] [1-0-C-1] o.a.k.c.c.i.ConsumerCoordinator:? [Consumer clientId=consumer-smiler.user-1, groupId=smiler.user] Finished assignment for group at generation 20: {consumer-smiler.user-1-2175739b-0511-40fb-abd7-3efc7c65572c=Assignment(partitions=[smiler.user.index-0])}
+2021-06-27 23:22:50,561 [INFO] [1-0-C-1] o.a.k.c.c.i.AbstractCoordinator:? [Consumer clientId=consumer-smiler.user-1, groupId=smiler.user] Successfully joined group with generation 20
+2021-06-27 23:22:50,566 [INFO] [1-0-C-1] o.a.k.c.c.i.ConsumerCoordinator:? [Consumer clientId=consumer-smiler.user-1, groupId=smiler.user] Adding newly assigned partitions: smiler.user.index-0
+2021-06-27 23:22:50,578 [INFO] [1-0-C-1] o.a.k.c.c.i.ConsumerCoordinator:? [Consumer clientId=consumer-smiler.user-1, groupId=smiler.user] Setting offset for partition smiler.user.index-0 to the committed offset FetchPosition{offset=4, offsetEpoch=Optional.empty, currentLeader=LeaderAndEpoch{leader=Optional[localhost:9092 (id: 0 rack: null)], epoch=0}}
+2021-06-27 23:22:50,578 [INFO] [1-0-C-1] o.s.k.l.KafkaMessageListenerContainer:? smiler.user: partitions assigned: [smiler.user.index-0]
+2021-06-27 23:22:50,619 [INFO] [1-0-C-1] c.s.m.k.KafkaListenerService:? KafkaListenerService.receiveUserIndexMessage.msg:{"ids":[606667828199821312]}
+2021-06-27 23:22:53,084 [INFO] [main] o.s.a.r.l.SimpleMessageListenerContainer:? Broker not available; cannot force queue declarations during start: java.net.ConnectException: Connection refused (Connection refused)
+2021-06-27 23:22:53,092 [INFO] [org.springframework.amqp.rabbit.RabbitListenerEndpointContainer#0-1] o.s.a.r.c.CachingConnectionFactory:? Attempting to connect to: [127.0.0.1:5672]
+2021-06-27 23:22:53,196 [INFO] [1-0-C-1] c.a.d.p.DruidDataSource:? {dataSource-1} inited
+2021-06-27 23:22:54,106 [INFO] [main] c.s.m.MemberIndexApplication:? Started MemberIndexApplication in 7.679 seconds (JVM running for 8.424)
+2021-06-27 23:22:59,179 [INFO] [org.springframework.amqp.rabbit.RabbitListenerEndpointContainer#0-1] o.s.a.r.l.SimpleMessageListenerContainer:? Restarting Consumer@7858d31d: tags=[[]], channel=null, acknowledgeMode=AUTO local queue size=0
+2021-06-27 23:22:59,181 [INFO] [org.springframework.amqp.rabbit.RabbitListenerEndpointContainer#0-2] o.s.a.r.c.CachingConnectionFactory:? Attempting to connect to: [127.0.0.1:5672]
+2021-06-27 23:23:05,277 [INFO] [org.springframework.amqp.rabbit.RabbitListenerEndpointContainer#0-2] o.s.a.r.l.SimpleMessageListenerContainer:? Restarting Consumer@1e462452: tags=[[]], channel=null, acknowledgeMode=AUTO local queue size=0
+2021-06-27 23:23:05,278 [INFO] [org.springframework.amqp.rabbit.RabbitListenerEndpointContainer#0-3] o.s.a.r.c.CachingConnectionFactory:? Attempting to connect to: [127.0.0.1:5672]
+2021-06-27 23:23:11,363 [INFO] [org.springframework.amqp.rabbit.RabbitListenerEndpointContainer#0-3] o.s.a.r.l.SimpleMessageListenerContainer:? Restarting Consumer@315a7e4d: tags=[[]], channel=null, acknowledgeMode=AUTO local queue size=0
+2021-06-27 23:23:11,364 [INFO] [org.springframework.amqp.rabbit.RabbitListenerEndpointContainer#0-4] o.s.a.r.c.CachingConnectionFactory:? Attempting to connect to: [127.0.0.1:5672]
+2021-06-27 23:23:17,439 [INFO] [org.springframework.amqp.rabbit.RabbitListenerEndpointContainer#0-4] o.s.a.r.l.SimpleMessageListenerContainer:? Restarting Consumer@4f68bdeb: tags=[[]], channel=null, acknowledgeMode=AUTO local queue size=0
+2021-06-27 23:23:17,440 [INFO] [org.springframework.amqp.rabbit.RabbitListenerEndpointContainer#0-5] o.s.a.r.c.CachingConnectionFactory:? Attempting to connect to: [127.0.0.1:5672]
+2021-06-27 23:23:23,529 [INFO] [org.springframework.amqp.rabbit.RabbitListenerEndpointContainer#0-5] o.s.a.r.l.SimpleMessageListenerContainer:? Restarting Consumer@320bcf9b: tags=[[]], channel=null, acknowledgeMode=AUTO local queue size=0
+2021-06-27 23:23:23,529 [INFO] [org.springframework.amqp.rabbit.RabbitListenerEndpointContainer#0-6] o.s.a.r.c.CachingConnectionFactory:? Attempting to connect to: [127.0.0.1:5672]
+2021-06-27 23:23:29,599 [INFO] [org.springframework.amqp.rabbit.RabbitListenerEndpointContainer#0-6] o.s.a.r.l.SimpleMessageListenerContainer:? Restarting Consumer@5abf1f3c: tags=[[]], channel=null, acknowledgeMode=AUTO local queue size=0
+2021-06-27 23:23:29,599 [INFO] [org.springframework.amqp.rabbit.RabbitListenerEndpointContainer#0-7] o.s.a.r.c.CachingConnectionFactory:? Attempting to connect to: [127.0.0.1:5672]
+2021-06-27 23:23:35,682 [INFO] [org.springframework.amqp.rabbit.RabbitListenerEndpointContainer#0-7] o.s.a.r.l.SimpleMessageListenerContainer:? Restarting Consumer@3c277e36: tags=[[]], channel=null, acknowledgeMode=AUTO local queue size=0
+2021-06-27 23:23:35,682 [INFO] [org.springframework.amqp.rabbit.RabbitListenerEndpointContainer#0-8] o.s.a.r.c.CachingConnectionFactory:? Attempting to connect to: [127.0.0.1:5672]
+2021-06-27 23:23:41,764 [INFO] [org.springframework.amqp.rabbit.RabbitListenerEndpointContainer#0-8] o.s.a.r.l.SimpleMessageListenerContainer:? Restarting Consumer@6cb5db01: tags=[[]], channel=null, acknowledgeMode=AUTO local queue size=0
+2021-06-27 23:23:41,764 [INFO] [org.springframework.amqp.rabbit.RabbitListenerEndpointContainer#0-9] o.s.a.r.c.CachingConnectionFactory:? Attempting to connect to: [127.0.0.1:5672]
+2021-06-27 23:23:47,848 [INFO] [org.springframework.amqp.rabbit.RabbitListenerEndpointContainer#0-9] o.s.a.r.l.SimpleMessageListenerContainer:? Restarting Consumer@2eb713f5: tags=[[]], channel=null, acknowledgeMode=AUTO local queue size=0
+2021-06-27 23:23:47,849 [INFO] [org.springframework.amqp.rabbit.RabbitListenerEndpointContainer#0-10] o.s.a.r.c.CachingConnectionFactory:? Attempting to connect to: [127.0.0.1:5672]
+2021-06-27 23:23:53,935 [INFO] [org.springframework.amqp.rabbit.RabbitListenerEndpointContainer#0-10] o.s.a.r.l.SimpleMessageListenerContainer:? Restarting Consumer@3ebecff2: tags=[[]], channel=null, acknowledgeMode=AUTO local queue size=0
+2021-06-27 23:23:53,936 [INFO] [org.springframework.amqp.rabbit.RabbitListenerEndpointContainer#0-11] o.s.a.r.c.CachingConnectionFactory:? Attempting to connect to: [127.0.0.1:5672]
+2021-06-27 23:24:00,009 [INFO] [org.springframework.amqp.rabbit.RabbitListenerEndpointContainer#0-11] o.s.a.r.l.SimpleMessageListenerContainer:? Restarting Consumer@338f0249: tags=[[]], channel=null, acknowledgeMode=AUTO local queue size=0
+2021-06-27 23:24:00,010 [INFO] [org.springframework.amqp.rabbit.RabbitListenerEndpointContainer#0-12] o.s.a.r.c.CachingConnectionFactory:? Attempting to connect to: [127.0.0.1:5672]
+2021-06-27 23:24:06,099 [INFO] [org.springframework.amqp.rabbit.RabbitListenerEndpointContainer#0-12] o.s.a.r.l.SimpleMessageListenerContainer:? Restarting Consumer@458ba13e: tags=[[]], channel=null, acknowledgeMode=AUTO local queue size=0
+2021-06-27 23:24:06,099 [INFO] [org.springframework.amqp.rabbit.RabbitListenerEndpointContainer#0-13] o.s.a.r.c.CachingConnectionFactory:? Attempting to connect to: [127.0.0.1:5672]
+2021-06-27 23:24:12,192 [INFO] [org.springframework.amqp.rabbit.RabbitListenerEndpointContainer#0-13] o.s.a.r.l.SimpleMessageListenerContainer:? Restarting Consumer@1ea165b7: tags=[[]], channel=null, acknowledgeMode=AUTO local queue size=0
+2021-06-27 23:24:12,193 [INFO] [org.springframework.amqp.rabbit.RabbitListenerEndpointContainer#0-14] o.s.a.r.c.CachingConnectionFactory:? Attempting to connect to: [127.0.0.1:5672]
+2021-06-27 23:24:18,280 [INFO] [org.springframework.amqp.rabbit.RabbitListenerEndpointContainer#0-14] o.s.a.r.l.SimpleMessageListenerContainer:? Restarting Consumer@36e5824d: tags=[[]], channel=null, acknowledgeMode=AUTO local queue size=0
+2021-06-27 23:24:18,281 [INFO] [org.springframework.amqp.rabbit.RabbitListenerEndpointContainer#0-15] o.s.a.r.c.CachingConnectionFactory:? Attempting to connect to: [127.0.0.1:5672]
+2021-06-27 23:24:24,351 [INFO] [org.springframework.amqp.rabbit.RabbitListenerEndpointContainer#0-15] o.s.a.r.l.SimpleMessageListenerContainer:? Restarting Consumer@53d09038: tags=[[]], channel=null, acknowledgeMode=AUTO local queue size=0
+2021-06-27 23:24:24,352 [INFO] [org.springframework.amqp.rabbit.RabbitListenerEndpointContainer#0-16] o.s.a.r.c.CachingConnectionFactory:? Attempting to connect to: [127.0.0.1:5672]
+2021-06-27 23:24:30,423 [INFO] [org.springframework.amqp.rabbit.RabbitListenerEndpointContainer#0-16] o.s.a.r.l.SimpleMessageListenerContainer:? Restarting Consumer@1c12e76b: tags=[[]], channel=null, acknowledgeMode=AUTO local queue size=0
+2021-06-27 23:24:30,424 [INFO] [org.springframework.amqp.rabbit.RabbitListenerEndpointContainer#0-17] o.s.a.r.c.CachingConnectionFactory:? Attempting to connect to: [127.0.0.1:5672]
+2021-06-27 23:24:36,521 [INFO] [org.springframework.amqp.rabbit.RabbitListenerEndpointContainer#0-17] o.s.a.r.l.SimpleMessageListenerContainer:? Restarting Consumer@4cac6a4c: tags=[[]], channel=null, acknowledgeMode=AUTO local queue size=0
+2021-06-27 23:24:36,522 [INFO] [org.springframework.amqp.rabbit.RabbitListenerEndpointContainer#0-18] o.s.a.r.c.CachingConnectionFactory:? Attempting to connect to: [127.0.0.1:5672]
+2021-06-27 23:24:42,616 [INFO] [org.springframework.amqp.rabbit.RabbitListenerEndpointContainer#0-18] o.s.a.r.l.SimpleMessageListenerContainer:? Restarting Consumer@54132932: tags=[[]], channel=null, acknowledgeMode=AUTO local queue size=0
+2021-06-27 23:24:42,617 [INFO] [org.springframework.amqp.rabbit.RabbitListenerEndpointContainer#0-19] o.s.a.r.c.CachingConnectionFactory:? Attempting to connect to: [127.0.0.1:5672]
+2021-06-27 23:24:48,710 [INFO] [org.springframework.amqp.rabbit.RabbitListenerEndpointContainer#0-19] o.s.a.r.l.SimpleMessageListenerContainer:? Restarting Consumer@521eb1c1: tags=[[]], channel=null, acknowledgeMode=AUTO local queue size=0
+2021-06-27 23:24:48,710 [INFO] [org.springframework.amqp.rabbit.RabbitListenerEndpointContainer#0-20] o.s.a.r.c.CachingConnectionFactory:? Attempting to connect to: [127.0.0.1:5672]
+2021-06-27 23:24:54,802 [INFO] [org.springframework.amqp.rabbit.RabbitListenerEndpointContainer#0-20] o.s.a.r.l.SimpleMessageListenerContainer:? Restarting Consumer@450c95be: tags=[[]], channel=null, acknowledgeMode=AUTO local queue size=0
+2021-06-27 23:24:54,803 [INFO] [org.springframework.amqp.rabbit.RabbitListenerEndpointContainer#0-21] o.s.a.r.c.CachingConnectionFactory:? Attempting to connect to: [127.0.0.1:5672]
+2021-06-27 23:25:00,893 [INFO] [org.springframework.amqp.rabbit.RabbitListenerEndpointContainer#0-21] o.s.a.r.l.SimpleMessageListenerContainer:? Restarting Consumer@632aa504: tags=[[]], channel=null, acknowledgeMode=AUTO local queue size=0
+2021-06-27 23:25:00,894 [INFO] [org.springframework.amqp.rabbit.RabbitListenerEndpointContainer#0-22] o.s.a.r.c.CachingConnectionFactory:? Attempting to connect to: [127.0.0.1:5672]
+2021-06-27 23:25:06,972 [INFO] [org.springframework.amqp.rabbit.RabbitListenerEndpointContainer#0-22] o.s.a.r.l.SimpleMessageListenerContainer:? Restarting Consumer@68b6ba1e: tags=[[]], channel=null, acknowledgeMode=AUTO local queue size=0
+2021-06-27 23:25:06,972 [INFO] [org.springframework.amqp.rabbit.RabbitListenerEndpointContainer#0-23] o.s.a.r.c.CachingConnectionFactory:? Attempting to connect to: [127.0.0.1:5672]
+2021-06-27 23:25:13,051 [INFO] [org.springframework.amqp.rabbit.RabbitListenerEndpointContainer#0-23] o.s.a.r.l.SimpleMessageListenerContainer:? Restarting Consumer@6b83e577: tags=[[]], channel=null, acknowledgeMode=AUTO local queue size=0
+2021-06-27 23:25:13,052 [INFO] [org.springframework.amqp.rabbit.RabbitListenerEndpointContainer#0-24] o.s.a.r.c.CachingConnectionFactory:? Attempting to connect to: [127.0.0.1:5672]
+2021-06-27 23:25:19,144 [INFO] [org.springframework.amqp.rabbit.RabbitListenerEndpointContainer#0-24] o.s.a.r.l.SimpleMessageListenerContainer:? Restarting Consumer@3c7fce86: tags=[[]], channel=null, acknowledgeMode=AUTO local queue size=0
+2021-06-27 23:25:19,145 [INFO] [org.springframework.amqp.rabbit.RabbitListenerEndpointContainer#0-25] o.s.a.r.c.CachingConnectionFactory:? Attempting to connect to: [127.0.0.1:5672]
+2021-06-27 23:25:25,226 [INFO] [org.springframework.amqp.rabbit.RabbitListenerEndpointContainer#0-25] o.s.a.r.l.SimpleMessageListenerContainer:? Restarting Consumer@4e6f7144: tags=[[]], channel=null, acknowledgeMode=AUTO local queue size=0
+2021-06-27 23:25:25,226 [INFO] [org.springframework.amqp.rabbit.RabbitListenerEndpointContainer#0-26] o.s.a.r.c.CachingConnectionFactory:? Attempting to connect to: [127.0.0.1:5672]
+2021-06-27 23:25:31,313 [INFO] [org.springframework.amqp.rabbit.RabbitListenerEndpointContainer#0-26] o.s.a.r.l.SimpleMessageListenerContainer:? Restarting Consumer@5df2f178: tags=[[]], channel=null, acknowledgeMode=AUTO local queue size=0
+2021-06-27 23:25:31,314 [INFO] [org.springframework.amqp.rabbit.RabbitListenerEndpointContainer#0-27] o.s.a.r.c.CachingConnectionFactory:? Attempting to connect to: [127.0.0.1:5672]
+2021-06-27 23:25:37,413 [INFO] [org.springframework.amqp.rabbit.RabbitListenerEndpointContainer#0-27] o.s.a.r.l.SimpleMessageListenerContainer:? Restarting Consumer@71c491f3: tags=[[]], channel=null, acknowledgeMode=AUTO local queue size=0
+2021-06-27 23:25:37,413 [INFO] [org.springframework.amqp.rabbit.RabbitListenerEndpointContainer#0-28] o.s.a.r.c.CachingConnectionFactory:? Attempting to connect to: [127.0.0.1:5672]
+2021-06-27 23:25:43,507 [INFO] [org.springframework.amqp.rabbit.RabbitListenerEndpointContainer#0-28] o.s.a.r.l.SimpleMessageListenerContainer:? Restarting Consumer@2888e74d: tags=[[]], channel=null, acknowledgeMode=AUTO local queue size=0
+2021-06-27 23:25:43,508 [INFO] [org.springframework.amqp.rabbit.RabbitListenerEndpointContainer#0-29] o.s.a.r.c.CachingConnectionFactory:? Attempting to connect to: [127.0.0.1:5672]
+2021-06-27 23:25:49,600 [INFO] [org.springframework.amqp.rabbit.RabbitListenerEndpointContainer#0-29] o.s.a.r.l.SimpleMessageListenerContainer:? Restarting Consumer@5c38beab: tags=[[]], channel=null, acknowledgeMode=AUTO local queue size=0
+2021-06-27 23:25:49,601 [INFO] [org.springframework.amqp.rabbit.RabbitListenerEndpointContainer#0-30] o.s.a.r.c.CachingConnectionFactory:? Attempting to connect to: [127.0.0.1:5672]
+2021-06-27 23:25:55,686 [INFO] [org.springframework.amqp.rabbit.RabbitListenerEndpointContainer#0-30] o.s.a.r.l.SimpleMessageListenerContainer:? Restarting Consumer@3ce956: tags=[[]], channel=null, acknowledgeMode=AUTO local queue size=0
+2021-06-27 23:25:55,687 [INFO] [org.springframework.amqp.rabbit.RabbitListenerEndpointContainer#0-31] o.s.a.r.c.CachingConnectionFactory:? Attempting to connect to: [127.0.0.1:5672]
+2021-06-27 23:26:01,778 [INFO] [org.springframework.amqp.rabbit.RabbitListenerEndpointContainer#0-31] o.s.a.r.l.SimpleMessageListenerContainer:? Restarting Consumer@6a207505: tags=[[]], channel=null, acknowledgeMode=AUTO local queue size=0
+2021-06-27 23:26:01,779 [INFO] [org.springframework.amqp.rabbit.RabbitListenerEndpointContainer#0-32] o.s.a.r.c.CachingConnectionFactory:? Attempting to connect to: [127.0.0.1:5672]
+2021-06-27 23:26:07,869 [INFO] [org.springframework.amqp.rabbit.RabbitListenerEndpointContainer#0-32] o.s.a.r.l.SimpleMessageListenerContainer:? Restarting Consumer@789ee490: tags=[[]], channel=null, acknowledgeMode=AUTO local queue size=0
+2021-06-27 23:26:07,870 [INFO] [org.springframework.amqp.rabbit.RabbitListenerEndpointContainer#0-33] o.s.a.r.c.CachingConnectionFactory:? Attempting to connect to: [127.0.0.1:5672]
+2021-06-27 23:26:13,957 [INFO] [org.springframework.amqp.rabbit.RabbitListenerEndpointContainer#0-33] o.s.a.r.l.SimpleMessageListenerContainer:? Restarting Consumer@29cadb1c: tags=[[]], channel=null, acknowledgeMode=AUTO local queue size=0
+2021-06-27 23:26:13,957 [INFO] [org.springframework.amqp.rabbit.RabbitListenerEndpointContainer#0-34] o.s.a.r.c.CachingConnectionFactory:? Attempting to connect to: [127.0.0.1:5672]
+2021-06-27 23:26:20,037 [INFO] [org.springframework.amqp.rabbit.RabbitListenerEndpointContainer#0-34] o.s.a.r.l.SimpleMessageListenerContainer:? Restarting Consumer@4208d276: tags=[[]], channel=null, acknowledgeMode=AUTO local queue size=0
+2021-06-27 23:26:20,038 [INFO] [org.springframework.amqp.rabbit.RabbitListenerEndpointContainer#0-35] o.s.a.r.c.CachingConnectionFactory:? Attempting to connect to: [127.0.0.1:5672]
+2021-06-27 23:26:26,128 [INFO] [org.springframework.amqp.rabbit.RabbitListenerEndpointContainer#0-35] o.s.a.r.l.SimpleMessageListenerContainer:? Restarting Consumer@7311d8a0: tags=[[]], channel=null, acknowledgeMode=AUTO local queue size=0
+2021-06-27 23:26:26,130 [INFO] [org.springframework.amqp.rabbit.RabbitListenerEndpointContainer#0-36] o.s.a.r.c.CachingConnectionFactory:? Attempting to connect to: [127.0.0.1:5672]
+2021-06-27 23:26:32,211 [INFO] [org.springframework.amqp.rabbit.RabbitListenerEndpointContainer#0-36] o.s.a.r.l.SimpleMessageListenerContainer:? Restarting Consumer@a88922c: tags=[[]], channel=null, acknowledgeMode=AUTO local queue size=0
+2021-06-27 23:26:32,213 [INFO] [org.springframework.amqp.rabbit.RabbitListenerEndpointContainer#0-37] o.s.a.r.c.CachingConnectionFactory:? Attempting to connect to: [127.0.0.1:5672]
+2021-06-27 23:26:38,299 [INFO] [org.springframework.amqp.rabbit.RabbitListenerEndpointContainer#0-37] o.s.a.r.l.SimpleMessageListenerContainer:? Restarting Consumer@4332a8fb: tags=[[]], channel=null, acknowledgeMode=AUTO local queue size=0
+2021-06-27 23:26:38,299 [INFO] [org.springframework.amqp.rabbit.RabbitListenerEndpointContainer#0-38] o.s.a.r.c.CachingConnectionFactory:? Attempting to connect to: [127.0.0.1:5672]
+2021-06-27 23:26:44,399 [INFO] [org.springframework.amqp.rabbit.RabbitListenerEndpointContainer#0-38] o.s.a.r.l.SimpleMessageListenerContainer:? Restarting Consumer@381d3ec7: tags=[[]], channel=null, acknowledgeMode=AUTO local queue size=0
+2021-06-27 23:26:44,400 [INFO] [org.springframework.amqp.rabbit.RabbitListenerEndpointContainer#0-39] o.s.a.r.c.CachingConnectionFactory:? Attempting to connect to: [127.0.0.1:5672]
+2021-06-27 23:26:50,491 [INFO] [org.springframework.amqp.rabbit.RabbitListenerEndpointContainer#0-39] o.s.a.r.l.SimpleMessageListenerContainer:? Restarting Consumer@735b992a: tags=[[]], channel=null, acknowledgeMode=AUTO local queue size=0
+2021-06-27 23:26:50,492 [INFO] [org.springframework.amqp.rabbit.RabbitListenerEndpointContainer#0-40] o.s.a.r.c.CachingConnectionFactory:? Attempting to connect to: [127.0.0.1:5672]
+2021-06-27 23:26:56,584 [INFO] [org.springframework.amqp.rabbit.RabbitListenerEndpointContainer#0-40] o.s.a.r.l.SimpleMessageListenerContainer:? Restarting Consumer@295f6bb0: tags=[[]], channel=null, acknowledgeMode=AUTO local queue size=0
+2021-06-27 23:26:56,585 [INFO] [org.springframework.amqp.rabbit.RabbitListenerEndpointContainer#0-41] o.s.a.r.c.CachingConnectionFactory:? Attempting to connect to: [127.0.0.1:5672]
+2021-06-27 23:27:02,659 [INFO] [org.springframework.amqp.rabbit.RabbitListenerEndpointContainer#0-41] o.s.a.r.l.SimpleMessageListenerContainer:? Restarting Consumer@30a1028e: tags=[[]], channel=null, acknowledgeMode=AUTO local queue size=0
+2021-06-27 23:27:02,659 [INFO] [org.springframework.amqp.rabbit.RabbitListenerEndpointContainer#0-42] o.s.a.r.c.CachingConnectionFactory:? Attempting to connect to: [127.0.0.1:5672]
+2021-06-27 23:27:08,751 [INFO] [org.springframework.amqp.rabbit.RabbitListenerEndpointContainer#0-42] o.s.a.r.l.SimpleMessageListenerContainer:? Restarting Consumer@143b28d1: tags=[[]], channel=null, acknowledgeMode=AUTO local queue size=0
+2021-06-27 23:27:08,752 [INFO] [org.springframework.amqp.rabbit.RabbitListenerEndpointContainer#0-43] o.s.a.r.c.CachingConnectionFactory:? Attempting to connect to: [127.0.0.1:5672]
+2021-06-27 23:27:14,842 [INFO] [org.springframework.amqp.rabbit.RabbitListenerEndpointContainer#0-43] o.s.a.r.l.SimpleMessageListenerContainer:? Restarting Consumer@789ded64: tags=[[]], channel=null, acknowledgeMode=AUTO local queue size=0
+2021-06-27 23:27:14,842 [INFO] [org.springframework.amqp.rabbit.RabbitListenerEndpointContainer#0-44] o.s.a.r.c.CachingConnectionFactory:? Attempting to connect to: [127.0.0.1:5672]
+2021-06-27 23:27:20,931 [INFO] [org.springframework.amqp.rabbit.RabbitListenerEndpointContainer#0-44] o.s.a.r.l.SimpleMessageListenerContainer:? Restarting Consumer@6aaa02a: tags=[[]], channel=null, acknowledgeMode=AUTO local queue size=0
+2021-06-27 23:27:20,932 [INFO] [org.springframework.amqp.rabbit.RabbitListenerEndpointContainer#0-45] o.s.a.r.c.CachingConnectionFactory:? Attempting to connect to: [127.0.0.1:5672]
+2021-06-27 23:27:27,023 [INFO] [org.springframework.amqp.rabbit.RabbitListenerEndpointContainer#0-45] o.s.a.r.l.SimpleMessageListenerContainer:? Restarting Consumer@7aea5c7d: tags=[[]], channel=null, acknowledgeMode=AUTO local queue size=0
+2021-06-27 23:27:27,024 [INFO] [org.springframework.amqp.rabbit.RabbitListenerEndpointContainer#0-46] o.s.a.r.c.CachingConnectionFactory:? Attempting to connect to: [127.0.0.1:5672]
+2021-06-27 23:27:33,116 [INFO] [org.springframework.amqp.rabbit.RabbitListenerEndpointContainer#0-46] o.s.a.r.l.SimpleMessageListenerContainer:? Restarting Consumer@4e6e7574: tags=[[]], channel=null, acknowledgeMode=AUTO local queue size=0
+2021-06-27 23:27:33,116 [INFO] [org.springframework.amqp.rabbit.RabbitListenerEndpointContainer#0-47] o.s.a.r.c.CachingConnectionFactory:? Attempting to connect to: [127.0.0.1:5672]
+2021-06-27 23:27:38,493 [INFO] [SpringContextShutdownHook] o.s.a.r.l.SimpleMessageListenerContainer:? Waiting for workers to finish.
+2021-06-27 23:27:38,493 [INFO] [SpringContextShutdownHook] o.s.a.r.l.SimpleMessageListenerContainer:? Successfully waited for workers to finish.
+2021-06-27 23:27:38,512 [INFO] [1-0-C-1] o.a.k.c.c.i.ConsumerCoordinator:? [Consumer clientId=consumer-smiler.user-1, groupId=smiler.user] Revoke previously assigned partitions smiler.user.index-0
+2021-06-27 23:27:38,512 [INFO] [1-0-C-1] o.s.k.l.KafkaMessageListenerContainer:? smiler.user: partitions revoked: [smiler.user.index-0]
+2021-06-27 23:27:38,512 [INFO] [1-0-C-1] o.a.k.c.c.i.AbstractCoordinator:? [Consumer clientId=consumer-smiler.user-1, groupId=smiler.user] Member consumer-smiler.user-1-2175739b-0511-40fb-abd7-3efc7c65572c sending LeaveGroup request to coordinator localhost:9092 (id: 2147483647 rack: null) due to the consumer unsubscribed from all topics
+2021-06-27 23:27:38,515 [INFO] [1-0-C-1] o.a.k.c.c.KafkaConsumer:? [Consumer clientId=consumer-smiler.user-1, groupId=smiler.user] Unsubscribed all topics or patterns and assigned partitions
+2021-06-27 23:27:38,515 [INFO] [1-0-C-1] o.s.s.c.ThreadPoolTaskScheduler:? Shutting down ExecutorService
+2021-06-27 23:27:38,524 [INFO] [1-0-C-1] o.s.k.l.KafkaMessageListenerContainer$ListenerConsumer:? smiler.user: Consumer stopped
+2021-06-27 23:27:38,528 [INFO] [SpringContextShutdownHook] o.s.a.r.l.SimpleMessageListenerContainer:? Shutdown ignored - container is not active already
+2021-06-27 23:27:38,529 [INFO] [SpringContextShutdownHook] o.s.s.c.ThreadPoolTaskExecutor:? Shutting down ExecutorService 'applicationTaskExecutor'
+2021-06-27 23:27:38,531 [INFO] [SpringContextShutdownHook] c.a.d.p.DruidDataSource:? {dataSource-1} closing ...
+2021-06-27 23:27:38,536 [INFO] [SpringContextShutdownHook] c.a.d.p.DruidDataSource:? {dataSource-1} closed
+2021-06-27 23:27:38,540 [INFO] [SpringContextShutdownHook] c.a.d.p.DruidDataSource:? {dataSource-1} closing ...

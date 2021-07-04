@@ -44,6 +44,7 @@
         <beetl.version>2.7.23</beetl.version>
         <commons-collections4.version>4.1</commons-collections4.version>
         <orika.version>1.5.4</orika.version>
+        <spring-kafka.version>2.5.4.RELEASE</spring-kafka.version>
     </properties>
 
     <dependencyManagement>
@@ -87,6 +88,12 @@
                 <groupId>com.ibeetl</groupId>
                 <artifactId>beetl</artifactId>
                 <version>${beetl.version}</version>
+                <exclusions>
+                    <exclusion>
+                        <groupId>org.antlr</groupId>
+                       <artifactId>antlr4-runtime</artifactId>
+                    </exclusion>
+                </exclusions>
             </dependency>
             <dependency>
                 <groupId>ma.glasnost.orika</groupId>
@@ -148,7 +155,20 @@
                 <artifactId>zkclient</artifactId>
                 <version>${zkclient.version}</version>
             </dependency>
+
+            <dependency>
+                <groupId>org.springframework.kafka</groupId>
+                <artifactId>spring-kafka</artifactId>
+                <version>${spring-kafka.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>org.apache.shardingsphere</groupId>
+                <artifactId>sharding-jdbc-spring-boot-starter</artifactId>
+                <version>4.0.0</version>
+            </dependency>
         </dependencies>
+
     </dependencyManagement>
 
     <build>

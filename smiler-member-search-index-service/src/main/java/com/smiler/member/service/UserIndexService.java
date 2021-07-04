@@ -3,6 +3,7 @@ package com.smiler.member.service;
 import com.smiler.member.model.po.UserSearchPo;
 import com.smiler.member.model.vo.UserVo;
 
+import java.math.BigInteger;
 import java.text.ParseException;
 import java.util.List;
 
@@ -20,4 +21,8 @@ public interface UserIndexService {
     void indexUserForClient(List<UserSearchPo> userSearchPos);
 
     void indexAllUser();
+
+    void addUserByIds(List<BigInteger> idList);
+
+    void addUserBatch(List<BigInteger> idList);
 }

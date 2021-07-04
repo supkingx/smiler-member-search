@@ -2,6 +2,7 @@ package com.smiler.member.serviceimpl;
 
 import com.smiler.member.constant.CommonConstant;
 import com.smiler.member.dao.user.UserBaseMapper;
+import com.smiler.member.dao2.user.UserMapper;
 import com.smiler.member.model.po.UserPo;
 import com.smiler.member.service.UserBaseService;
 import org.apache.commons.collections4.CollectionUtils;

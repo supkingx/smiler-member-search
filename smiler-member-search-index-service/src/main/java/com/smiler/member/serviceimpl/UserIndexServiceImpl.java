@@ -1,6 +1,7 @@
 package com.smiler.member.serviceimpl;
 
 import com.alibaba.fastjson.JSON;
+import com.google.common.collect.Lists;
 import com.smiler.member.constant.CommonConstant;
 import com.smiler.member.core.orika.OrikaFacade;
 import com.smiler.member.dao.utils.EsRequestHelper;
@@ -9,6 +10,8 @@ import com.smiler.member.model.po.UserSearchPo;
 import com.smiler.member.model.vo.UserVo;
 import com.smiler.member.service.UserBaseService;
 import com.smiler.member.service.UserIndexService;
+import com.smiler.member.service.UserShardingBaseService;
+import org.apache.commons.collections4.CollectionUtils;
 import org.elasticsearch.action.bulk.BulkRequest;
 import org.elasticsearch.action.bulk.BulkResponse;
 import org.elasticsearch.action.index.IndexRequest;
@@ -22,6 +25,7 @@ import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Service;
 
 import java.io.IOException;
+import java.math.BigInteger;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.Date;
@@ -55,6 +59,9 @@ public class UserIndexServiceImpl implements UserIndexService {
 
     @Autowired
     private OrikaFacade orikaFacade;
+
+    @Autowired
+    private UserShardingBaseService userShardingBaseService;
 
     @Override
     public int indexUsersTest(List<UserVo> userVos) {
@@ -113,6 +120,9 @@ public class UserIndexServiceImpl implements UserIndexService {
 
     @Override
     public void indexUserForClient(List<UserSearchPo> userSearchPos) {
+        if (CollectionUtils.isEmpty(userSearchPos)) {
+            return;
+        }
         StringBuilder bulkBuilder = new StringBuilder();
         for (UserSearchPo userVo : userSearchPos) {
             bulkBuilder.append(INDEX.replace(UER_ID, userVo.getId()))
@@ -127,5 +137,23 @@ public class UserIndexServiceImpl implements UserIndexService {
         List<UserPo> userPos = userBaseService.queryAllUsers();
         List<UserSearchPo> userVos = orikaFacade.mapAsList(userPos, UserSearchPo.class);
         indexUserForClient(userVos);
+    }
+
+    @Override
+    public void addUserByIds(List<BigInteger> idList) {
+        for (List<BigInteger> ids : Lists.partition(idList, CommonConstant.QUERY_SIZE)) {
+            List<UserPo> userPos = userBaseService.queryUserByIds(ids);
+            List<UserSearchPo> userSearchPos = orikaFacade.mapAsList(userPos, UserSearchPo.class);
+            this.indexUserForClient(userSearchPos);
+        }
+    }
+
+    @Override
+    public void addUserBatch(List<BigInteger> idList) {
+        for (List<BigInteger> ids : Lists.partition(idList, CommonConstant.QUERY_SIZE)) {
+            List<UserVo> userPos = userShardingBaseService.queryUserById(ids);
+            List<UserSearchPo> userSearchPos = orikaFacade.mapAsList(userPos, UserSearchPo.class);
+            this.indexUserForClient(userSearchPos);
+        }
     }
 }
