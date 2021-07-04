@@ -17,7 +17,7 @@
     <select id="queryAllUsers" resultMap="BaseResultMap">
         select
         <include refid="Base_Column_List"></include>
-        from user
+        from king_user
     </select>
 
     <select id="queryUserByIds" resultMap="BaseResultMap">
