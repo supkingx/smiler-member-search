@@ -138,7 +138,7 @@ public class UserIndexServiceImpl implements UserIndexService {
         List<UserSearchPo> userVos = orikaFacade.mapAsList(userPos, UserSearchPo.class);
         indexUserForClient(userVos);
     }
-
+// 测试权限
     @Override
     public void addUserByIds(List<BigInteger> idList) {
         for (List<BigInteger> ids : Lists.partition(idList, CommonConstant.QUERY_SIZE)) {
