@@ -1,9 +1,9 @@
 package com.smiler.member.controller;
 
 import com.smiler.member.dao2.user.UserMapper;
-import com.smiler.member.model.po.UserPo;
-import com.smiler.member.model.po.UserSearchPo;
-import com.smiler.member.model.vo.UserVo;
+import com.smiler.member.search.model.po.UserPo;
+import com.smiler.member.search.model.po.UserSearchPo;
+import com.smiler.member.search.model.vo.UserVo;
 import com.smiler.member.service.UserBaseService;
 import com.smiler.member.service.UserIndexService;
 import org.springframework.beans.factory.annotation.Autowired;

@@ -1,7 +1,8 @@
 package com.smiler.member.controller;
 
-import com.smiler.member.model.so.UserSo;
-import com.smiler.member.model.vo.UserVo;
+import com.smiler.member.search.model.so.UserSearch;
+import com.smiler.member.search.model.so.UserSo;
+import com.smiler.member.search.model.vo.UserVo;
 import com.smiler.member.service.UserQueryApiService;
 import com.smiler.member.service.UserQueryTemplateService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -34,8 +35,8 @@ public class QueryController {
     }
 
     @PostMapping("/queryUsersComprehensive")
-    public List<UserVo> queryUsersComprehensive(@RequestBody UserSo userSo) {
-        List<UserVo> userVos = userQueryTemplateService.queryUsersComprehensive(userSo);
+    public List<UserVo> queryUsersComprehensive(@RequestBody UserSearch userSearch) {
+        List<UserVo> userVos = userQueryTemplateService.queryUsersComprehensive(userSearch);
         return userVos;
     }
 }

@@ -1,7 +1,7 @@
 package com.smiler.member.config;
 
 import com.google.common.base.Preconditions;
-import com.smiler.member.constant.CommonConstant;
+import com.smiler.member.search.constant.CommonConstant;
 import org.apache.http.HttpHost;
 import org.elasticsearch.client.RestClient;
 import org.elasticsearch.client.RestClientBuilder;

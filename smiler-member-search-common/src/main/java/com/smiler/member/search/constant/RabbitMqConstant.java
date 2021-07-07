@@ -1,4 +1,4 @@
-package com.smiler.member.constant;
+package com.smiler.member.search.constant;
 
 /**
  * @description: rabbitMQ 常量

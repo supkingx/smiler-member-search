@@ -1,8 +1,8 @@
 package com.smiler.member.serviceimpl;
 
 import com.alibaba.fastjson.JSON;
-import com.smiler.member.constant.CommonConstant;
-import com.smiler.member.model.vo.UserVo;
+import com.smiler.member.search.constant.CommonConstant;
+import com.smiler.member.search.model.vo.UserVo;
 import com.smiler.member.service.UserQueryApiService;
 import org.elasticsearch.action.search.SearchRequest;
 import org.elasticsearch.action.search.SearchResponse;

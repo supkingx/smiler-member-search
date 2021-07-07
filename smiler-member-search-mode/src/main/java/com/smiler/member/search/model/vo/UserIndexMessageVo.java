@@ -1,6 +1,6 @@
-package com.smiler.member.model.vo;
+package com.smiler.member.search.model.vo;
 
-import com.smiler.member.common.Vo;
+import com.smiler.member.search.common.Vo;
 
 import java.math.BigInteger;
 import java.util.List;

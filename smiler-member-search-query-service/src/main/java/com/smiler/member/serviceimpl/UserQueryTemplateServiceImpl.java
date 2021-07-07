@@ -3,10 +3,11 @@ package com.smiler.member.serviceimpl;
 import com.alibaba.fastjson.JSON;
 import com.alibaba.fastjson.JSONObject;
 import com.alibaba.fastjson.serializer.SerializerFeature;
-import com.smiler.member.common.SearchResponse;
+import com.smiler.member.search.common.SearchResponse;
 import com.smiler.member.dao.utils.EsRequestHelper;
-import com.smiler.member.model.so.UserSo;
-import com.smiler.member.model.vo.UserVo;
+import com.smiler.member.search.model.so.UserSearch;
+import com.smiler.member.search.model.so.UserSo;
+import com.smiler.member.search.model.vo.UserVo;
 import com.smiler.member.service.UserQueryTemplateService;
 import org.beetl.core.GroupTemplate;
 import org.beetl.core.Template;
@@ -38,8 +39,8 @@ public class UserQueryTemplateServiceImpl implements UserQueryTemplateService {
     private String userSearchUrl;
 
     @Override
-    public List<UserVo> queryUsersComprehensive(UserSo userSo) {
-        JSONObject soParam = JSON.parseObject(JSON.toJSONString(userSo, SerializerFeature.WriteMapNullValue));
+    public List<UserVo> queryUsersComprehensive(UserSearch userSearch) {
+        JSONObject soParam = JSON.parseObject(JSON.toJSONString(userSearch, SerializerFeature.WriteMapNullValue));
         String DSL = generateDSL(soParam);
         logger.info("queryUsersComprehensive.{}", DSL);
         SearchResponse<UserVo> searchResponse = esRequestHelper.queryRestClient(DSL, userSearchUrl, UserVo.class);

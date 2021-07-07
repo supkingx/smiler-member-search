@@ -1,4 +1,4 @@
-package com.smiler.member.core.orika;
+package com.smiler.member.search.core.orika;
 
 import ma.glasnost.orika.MapperFactory;
 

@@ -1,4 +1,4 @@
-package com.smiler.member.model.enums;
+package com.smiler.member.search.model.enums;
 
 /**
  * @description: 消息体类型枚举

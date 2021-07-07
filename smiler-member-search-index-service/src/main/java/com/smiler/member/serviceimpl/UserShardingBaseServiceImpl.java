@@ -1,10 +1,10 @@
 package com.smiler.member.serviceimpl;
 
-import com.smiler.member.constant.CommonConstant;
-import com.smiler.member.core.orika.OrikaFacade;
+import com.smiler.member.search.constant.CommonConstant;
+import com.smiler.member.search.core.orika.OrikaFacade;
 import com.smiler.member.dao2.user.UserMapper;
-import com.smiler.member.model.po.UserPo;
-import com.smiler.member.model.vo.UserVo;
+import com.smiler.member.search.model.po.UserPo;
+import com.smiler.member.search.model.vo.UserVo;
 import com.smiler.member.service.UserShardingBaseService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;

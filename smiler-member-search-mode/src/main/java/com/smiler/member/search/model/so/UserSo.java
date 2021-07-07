@@ -1,6 +1,6 @@
-package com.smiler.member.model.so;
+package com.smiler.member.search.model.so;
 
-import com.smiler.member.common.So;
+import com.smiler.member.search.common.So;
 import lombok.Getter;
 import lombok.Setter;
 

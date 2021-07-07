@@ -1,7 +1,7 @@
-package com.smiler.member.core.orika;
+package com.smiler.member.search.core.orika;
 
-import com.smiler.member.model.po.UserPo;
-import com.smiler.member.model.po.UserSearchPo;
+import com.smiler.member.search.model.po.UserPo;
+import com.smiler.member.search.model.po.UserSearchPo;
 import ma.glasnost.orika.MapperFactory;
 import org.springframework.stereotype.Component;
 
