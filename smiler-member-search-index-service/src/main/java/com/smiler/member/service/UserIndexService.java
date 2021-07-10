@@ -1,7 +1,7 @@
 package com.smiler.member.service;
 
-import com.smiler.member.model.po.UserSearchPo;
-import com.smiler.member.model.vo.UserVo;
+import com.smiler.member.search.model.po.UserSearchPo;
+import com.smiler.member.search.model.vo.UserVo;
 
 import java.math.BigInteger;
 import java.text.ParseException;

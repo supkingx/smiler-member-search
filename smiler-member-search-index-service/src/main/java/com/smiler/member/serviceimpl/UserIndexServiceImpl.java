@@ -2,12 +2,12 @@ package com.smiler.member.serviceimpl;
 
 import com.alibaba.fastjson.JSON;
 import com.google.common.collect.Lists;
-import com.smiler.member.constant.CommonConstant;
-import com.smiler.member.core.orika.OrikaFacade;
+import com.smiler.member.search.constant.CommonConstant;
+import com.smiler.member.search.core.orika.OrikaFacade;
 import com.smiler.member.dao.utils.EsRequestHelper;
-import com.smiler.member.model.po.UserPo;
-import com.smiler.member.model.po.UserSearchPo;
-import com.smiler.member.model.vo.UserVo;
+import com.smiler.member.search.model.po.UserPo;
+import com.smiler.member.search.model.po.UserSearchPo;
+import com.smiler.member.search.model.vo.UserVo;
 import com.smiler.member.service.UserBaseService;
 import com.smiler.member.service.UserIndexService;
 import com.smiler.member.service.UserShardingBaseService;

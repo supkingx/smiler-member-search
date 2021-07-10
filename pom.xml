@@ -25,7 +25,7 @@
     </parent>
     <groupId>com.smiler</groupId>
     <artifactId>smiler-member-search</artifactId>
-    <version>1.0.3</version>
+    <version>1.0.5</version>
 
     <properties>
         <maven.compiler.source>8</maven.compiler.source>
@@ -88,12 +88,12 @@
                 <groupId>com.ibeetl</groupId>
                 <artifactId>beetl</artifactId>
                 <version>${beetl.version}</version>
-                <exclusions>
-                    <exclusion>
-                        <groupId>org.antlr</groupId>
-                       <artifactId>antlr4-runtime</artifactId>
-                    </exclusion>
-                </exclusions>
+<!--                <exclusions>-->
+<!--                    <exclusion>-->
+<!--                        <groupId>org.antlr</groupId>-->
+<!--                       <artifactId>antlr4-runtime</artifactId>-->
+<!--                    </exclusion>-->
+<!--                </exclusions>-->
             </dependency>
             <dependency>
                 <groupId>ma.glasnost.orika</groupId>

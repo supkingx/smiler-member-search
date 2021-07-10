@@ -1,6 +1,6 @@
 package com.smiler.member.service;
 
-import com.smiler.member.model.po.UserPo;
+import com.smiler.member.search.model.po.UserPo;
 
 import java.math.BigInteger;
 import java.util.List;

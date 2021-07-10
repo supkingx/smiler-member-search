@@ -1,15 +1,9 @@
 package com.smiler.member.rabbitmq;
 
 import com.alibaba.fastjson.JSON;
-import com.google.common.collect.Lists;
-import com.smiler.member.constant.CommonConstant;
-import com.smiler.member.constant.RabbitMqConstant;
-import com.smiler.member.core.orika.OrikaFacade;
-import com.smiler.member.model.enums.MessageTypeEnum;
-import com.smiler.member.model.po.UserPo;
-import com.smiler.member.model.po.UserSearchPo;
-import com.smiler.member.model.vo.UserIndexMessageVo;
-import com.smiler.member.service.UserBaseService;
+import com.smiler.member.search.constant.RabbitMqConstant;
+import com.smiler.member.search.model.enums.MessageTypeEnum;
+import com.smiler.member.search.model.vo.UserIndexMessageVo;
 import com.smiler.member.service.UserIndexService;
 import org.apache.commons.lang3.StringUtils;
 import org.slf4j.Logger;
@@ -17,9 +11,6 @@ import org.slf4j.LoggerFactory;
 import org.springframework.amqp.rabbit.annotation.RabbitListener;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-
-import java.math.BigInteger;
-import java.util.List;
 
 /**
  * @description:

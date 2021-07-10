@@ -1,4 +1,4 @@
-package com.smiler.member.common;
+package com.smiler.member.search.common;
 
 import java.io.Serializable;
 

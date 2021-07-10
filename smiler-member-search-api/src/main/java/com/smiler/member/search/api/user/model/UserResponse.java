@@ -1,6 +1,6 @@
 package com.smiler.member.search.api.user.model;
 
-import com.smiler.member.common.Vo;
+import com.smiler.member.search.common.Vo;
 
 import java.math.BigInteger;
 

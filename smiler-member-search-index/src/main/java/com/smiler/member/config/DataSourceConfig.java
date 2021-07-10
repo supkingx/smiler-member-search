@@ -1,7 +1,7 @@
 package com.smiler.member.config;
 
 import com.alibaba.druid.pool.DruidDataSource;
-import com.smiler.member.constant.CommonConstant;
+import com.smiler.member.search.constant.CommonConstant;
 import org.springframework.boot.context.properties.ConfigurationProperties;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;

@@ -1,6 +1,6 @@
-package com.smiler.member.model.po;
+package com.smiler.member.search.model.po;
 
-import com.smiler.member.common.Po;
+import com.smiler.member.search.common.Po;
 import lombok.Getter;
 import lombok.Setter;
 

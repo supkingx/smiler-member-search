@@ -1,7 +1,8 @@
 package com.smiler.member.service;
 
-import com.smiler.member.model.so.UserSo;
-import com.smiler.member.model.vo.UserVo;
+import com.smiler.member.search.model.so.UserSearch;
+import com.smiler.member.search.model.so.UserSo;
+import com.smiler.member.search.model.vo.UserVo;
 
 import java.util.List;
 
@@ -15,8 +16,8 @@ public interface UserQueryTemplateService {
     /**
      * 综合搜索
      *
-     * @param userSo
+     * @param userSearch
      * @return
      */
-    List<UserVo> queryUsersComprehensive(UserSo userSo);
+    List<UserVo> queryUsersComprehensive(UserSearch userSearch);
 }

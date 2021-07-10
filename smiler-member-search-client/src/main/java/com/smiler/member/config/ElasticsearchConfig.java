@@ -1,6 +1,6 @@
 package com.smiler.member.config;
 
-import com.smiler.member.constant.CommonConstant;
+import com.smiler.member.search.constant.CommonConstant;
 import org.elasticsearch.client.RestClient;
 import org.elasticsearch.client.RestHighLevelClient;
 import org.springframework.context.annotation.Bean;
