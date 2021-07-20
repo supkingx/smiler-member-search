@@ -8,7 +8,7 @@ import org.springframework.context.annotation.Configuration;
 import java.io.IOException;
 
 /**
- * @description:
+ * @description: beetl模板引擎配置
  * @Author: wangchao
  * @Date: 2021/5/25
  */

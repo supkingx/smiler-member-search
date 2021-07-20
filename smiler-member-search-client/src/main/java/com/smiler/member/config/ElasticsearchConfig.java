@@ -14,6 +14,9 @@ import org.springframework.context.annotation.Configuration;
 @Configuration
 public class ElasticsearchConfig extends AbstractConfig {
 
+    private static final int READ_TIMEOUT = 5000;
+    private static final int WRITE_TIMEOUT = 10000;
+
     @Bean(CommonConstant.QUERY_REST_HIGH_LEVEL_CLIENT)
     public RestHighLevelClient queryRestHighLevelClient() {
         return initRestHighLevelClient();
@@ -26,12 +29,12 @@ public class ElasticsearchConfig extends AbstractConfig {
 
     @Bean(CommonConstant.QUERY_REST_CLIENT)
     public RestClient queryRestClient() {
-        return initRestClient();
+        return initRestClient(READ_TIMEOUT);
     }
 
     @Bean(CommonConstant.INDEX_REST_CLIENT)
     public RestClient indexRestClient() {
-        return initRestClient();
+        return initRestClient(WRITE_TIMEOUT);
     }
 
 }
