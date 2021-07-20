@@ -88,12 +88,13 @@
                 <groupId>com.ibeetl</groupId>
                 <artifactId>beetl</artifactId>
                 <version>${beetl.version}</version>
-<!--                <exclusions>-->
-<!--                    <exclusion>-->
-<!--                        <groupId>org.antlr</groupId>-->
-<!--                       <artifactId>antlr4-runtime</artifactId>-->
-<!--                    </exclusion>-->
-<!--                </exclusions>-->
+<!--                包冲突，容易导致sharding报错 java.lang.NoClassDefFoundError: org/antlr/v4/runtime/CharStreams-->
+                <exclusions>
+                    <exclusion>
+                        <groupId>org.antlr</groupId>
+                       <artifactId>antlr4-runtime</artifactId>
+                    </exclusion>
+                </exclusions>
             </dependency>
             <dependency>
                 <groupId>ma.glasnost.orika</groupId>
@@ -166,6 +167,20 @@
                 <groupId>org.apache.shardingsphere</groupId>
                 <artifactId>sharding-jdbc-spring-boot-starter</artifactId>
                 <version>4.0.0</version>
+                <!--                包冲突，容易导致beetl报错 java.lang.NoClassDefFoundError: org/antlr/v4/runtime/CharStreams-->
+                <exclusions>
+                    <exclusion>
+                        <groupId>org.antlr</groupId>
+                        <artifactId>antlr4-runtime</artifactId>
+                    </exclusion>
+                </exclusions>
+            </dependency>
+
+            <!--      sharding和beetl包冲突，排除它两的antlr4-runtime包后重新引入-->
+            <dependency>
+                <groupId>org.antlr</groupId>
+                <artifactId>antlr4-runtime</artifactId>
+                <version>4.7.2</version>
             </dependency>
         </dependencies>
 
