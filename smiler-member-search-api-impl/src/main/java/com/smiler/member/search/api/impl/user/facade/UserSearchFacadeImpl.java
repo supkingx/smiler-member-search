@@ -1,6 +1,5 @@
 package com.smiler.member.search.api.impl.user.facade;
 
-import com.alibaba.dubbo.config.annotation.Service;
 import com.alibaba.fastjson.JSON;
 import com.smiler.member.search.core.orika.OrikaFacade;
 import com.smiler.member.search.model.so.UserSearch;
@@ -11,6 +10,7 @@ import com.smiler.member.service.UserQueryTemplateService;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 
 import java.util.List;
 
